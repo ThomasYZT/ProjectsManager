@@ -1,0 +1,116 @@
+<% content_for :header do %>
+  <p id="code" style="display:none"><%= session[:company_id]%></p>
+  <section class="content-header">
+    <div class="row">
+      <div class="col-xs-12">
+        <ol class="breadcrumb" style="font-size:medium;">
+          <li><a href="/dashboard"><i class="fa fa-dashboard"></i> 首页 </a></li>
+        </ol>
+      </div>
+    </div>
+  </section>
+<% end %>
+
+<% content_for :content do %>
+  <section class="content" style="margin-top:-25px;" >
+    <div class="row">
+      <div class="col-xs-12" style="padding:0 0;">
+        <ol class="breadcrumb" style=" border-radius:0px;padding:2px 2px 2px 2px;font-size:medium;background-color:#EE7621;color: white;">
+          <li style="padding:0 0 0 30px;font-weight: bold;"> 年份 : &nbsp;&nbsp;<span>2016</span></li>
+        </ol>
+      </div>
+
+      <div class="col-md-4">
+        <div class="info-box bg-yellow">
+          <span class="info-box-icon"><i class="ion ion-ios-pricetag-outline"></i></span>
+
+          <div class="info-box-content">
+            <span class="info-box-text">项目数量</span>
+            <span class="info-box-number">5,200</span>            
+            <span class="progress-description">
+              本月增长了30%
+            </span>
+          </div>
+        </div>
+        <div class="info-box bg-green">
+          <span class="info-box-icon"><i class="ion ion-ios-heart-outline"></i></span>
+
+          <div class="info-box-content">
+            <span class="info-box-text">项目金额</span>
+            <span class="info-box-number">92,050</span>
+            <span class="progress-description">
+              本月增长了20%
+            </span>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-8">
+        <div id="container" style="min-width:700px;height:400px"></div>
+      </div>
+    </div>
+
+    
+    <!-- <div class="row">
+      <div class="col-xs-12" style="padding:0 0;">
+        <ol class="breadcrumb" style=" border-radius:0px;padding:2px 2px 2px 2px;font-size:medium;background-color:#71C671;color: white;">
+          <li style="padding:0 0 0 30px;font-weight: bold;"> 年份 : &nbsp;&nbsp;<span>2015</span></li>
+        </ol>
+      </div>
+      <div class="col-md-4">
+        <div class="info-box bg-yellow">
+          <span class="info-box-icon"><i class="ion ion-ios-pricetag-outline"></i></span>
+    
+          <div class="info-box-content">
+            <span class="info-box-text">项目数量</span>
+            <span class="info-box-number">5,200</span>
+            <span class="progress-description">
+              本月增长了30%
+            </span>
+          </div>
+        </div>
+        <div class="info-box bg-green">
+          <span class="info-box-icon"><i class="ion ion-ios-heart-outline"></i></span>
+    
+          <div class="info-box-content">
+            <span class="info-box-text">项目金额</span>
+            <span class="info-box-number">92,050</span>
+            <span class="progress-description">
+              本月增长了20%
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12" style="padding:0 0;">
+        <ol class="breadcrumb" style=" border-radius:0px;padding:2px 2px 2px 2px;font-size:medium;background-color:#CD3333;color: white;">
+          <li style="padding:0 0 0 30px;font-weight: bold;"> 年份 : &nbsp;&nbsp;<span>2014</span></li>
+        </ol>
+      </div>
+      <div class="col-md-4">
+        <div class="info-box bg-yellow">
+          <span class="info-box-icon"><i class="ion ion-ios-pricetag-outline"></i></span>
+    
+          <div class="info-box-content">
+            <span class="info-box-text">项目数量</span>
+            <span class="info-box-number">5,200</span>
+            <span class="progress-description">
+              本月增长了30%
+            </span>
+          </div>
+        </div>
+        <div class="info-box bg-green">
+          <span class="info-box-icon"><i class="ion ion-ios-heart-outline"></i></span>
+    
+          <div class="info-box-content">
+            <span class="info-box-text">项目金额</span>
+            <span class="info-box-number">92,050</span>
+            <span class="progress-description">
+              本月增长了20%
+            </span>
+          </div>
+        </div>
+      </div>
+    </div> -->
+  </section>
+<% end %>

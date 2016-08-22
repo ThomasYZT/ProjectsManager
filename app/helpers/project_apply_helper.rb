@@ -1,0 +1,2 @@
+module ProjectApplyHelper
+end
