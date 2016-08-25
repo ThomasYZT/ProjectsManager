@@ -5,25 +5,87 @@
       <div class="col-xs-12">
         <ol class="breadcrumb" style="font-size:medium;">
           <li><a href="/dashboard"><i class="fa fa-dashboard"></i> 首页 </a></li>
+          <li class="active">数据统计分析</li>
         </ol>
       </div>
     </div>
+
+    
   </section>
 <% end %>
 
 <% content_for :content do %>
   <section class="content" style="margin-top:-25px;" >
     <div class="row">
-      <div class="col-xs-12" style="padding:0 0;">
-        <ol class="breadcrumb" style=" border-radius:0px;padding:2px 2px 2px 2px;font-size:medium;background-color:#EE7621;color: white;">
-          <li style="padding:0 0 0 30px;font-weight: bold;"> 年份 : &nbsp;&nbsp;<span>2016</span></li>
-        </ol>
+      <div class="col-md-2 city">
+        <div class="form-group">
+          <label>市</label>
+          <select data-tags="true" data-placeholder="请选择市" style="width: 100%;" class="form-control select2 select2-hidden-accessible">
+            <option></option>
+            <option value="0">郴州市</option>
+            <option value="1">永州市</option>
+            <option value="2">湘西自治州</option>
+            <option value="3">长沙市</option>
+            <option value="4">衡阳市</option>
+            <option value="5">张家界</option>
+            <option value="6">邵阳市</option>
+            <option value="7">常德市</option>
+            <option value="8">怀化市</option>
+            <option value="9">株洲市</option>
+          </select>
+        </div>
+      </div>
+      <div class="col-md-2 county" style="display: none;">
+        <div class="form-group">
+          <label>县</label>
+          <select data-tags="true" data-placeholder="请选择县" style="width: 100%;" class="form-control select2 select2-hidden-accessible">
+            <option></option>
+            
+          </select>
+        </div>
+      </div>
+      <div class="col-md-2">
+        <button class="btn btn-block btn-default search_place" style="margin-top: 20px;border-radius: 20px;">统计</button>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-md-12" style="padding:0 0;margin-bottom:15px;">
+        <div class="row" style="background-color:#f39c12;border-bottom-left-radius: 3px;border-bottom-right-radius: 3px;border-top-left-radius: 3px;border-top-right-radius: 3px;box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);font-weight: bold;margin-bottom: 4px;padding-bottom: 5px;padding-left: 10px;padding-right: 10px;padding-top: 5px;text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);">
+          <h4 style="color: white;margin-left: 20px;" class="place_nav">
+            湖南省数据统计分析
+            <!-- <small style="color:white;">／株洲市数据统计分析</small>
+            <small style="color:white;">／株洲市数据统计分析</small> -->
+          </h4>
+        </div>
+      </div>
+      <div class="row" style="margin-bottom: 15px;">
+        <div class="col-md-1"><p style="line-height:28px;margin:0 0 0 15px;text-align: center;">年份选择：</p></div>
+        <div class="col-md-3">
+          <select data-tags="true" data-placeholder="请选择年份" style="width: 100%;" class="select2 select2-hidden-accessible year">
+            <option>2016年</option>
+            <option>2015年</option>
+            <option>2014年</option>
+            <option>2013年</option>
+            <option>2014年</option>
+            <option>2011年</option>
+            <option>2010年</option>
+            <option>2009年</option>
+            <option>2008年</option>
+            <option>2007年</option>
+            <option>2006年</option>
+            <option>2005年</option>
+            <option>2004年</option>
+            <option>2003年</option>
+            <option>2002年</option>
+          </select>
+        </div> 
       </div>
 
-      <div class="col-md-4">
+      <!-- <div class="col-md-4">
         <div class="info-box bg-yellow">
           <span class="info-box-icon"><i class="ion ion-ios-pricetag-outline"></i></span>
-
+      
           <div class="info-box-content">
             <span class="info-box-text">项目数量</span>
             <span class="info-box-number">5,200</span>            
@@ -34,7 +96,7 @@
         </div>
         <div class="info-box bg-green">
           <span class="info-box-icon"><i class="ion ion-ios-heart-outline"></i></span>
-
+      
           <div class="info-box-content">
             <span class="info-box-text">项目金额</span>
             <span class="info-box-number">92,050</span>
@@ -43,12 +105,60 @@
             </span>
           </div>
         </div>
+      </div> -->
+      <div class="col-md-12" style="margin-bottom: 20px;">
+        <div class="col-md-6">
+          <div id="container" style="width:100%;height:400px"></div>
+        </div>
+        <div class="col-md-6">
+          <div id="container1" style="width:100%;height:400px"></div>
+        </div>
       </div>
-      <div class="col-md-8">
-        <div id="container" style="min-width:700px;height:400px"></div>
+
+      <div class="col-md-12">
+          <div class="box">
+            <div class="box-body">
+              <table class="table table-striped　table table-hover" id="tTrolleys">
+                <thead>
+                  <!-- 第一行 -->
+                  <tr style="border-bottom:1px solid black;">
+                    <!-- 第一列 -->
+                    <th rowspan="2">项目名称</th>
+                    <!-- 第二列 -->
+                    <th>数量</th>
+                    <!-- 第三列 -->
+                    <th>水池、水窖容量</th>
+                    <th>管网长度</th>
+                    <th>沟渠、机耕道长度</th>
+                    <th>项目总造价</th>
+                    <th>需要烟草行业投入资金总额</th>
+                    <th>其中：省内烟草行业配套补贴资金总额</th>
+                    <th>其中：国家局应补贴总额</th>
+                    <th>受益面积</th>
+                  </tr>
+                  <!-- 第二行 -->
+                  <tr style="border-bottom:1px solid black;">
+                    <!-- 第二列 -->
+                    <th>个数／条</th>
+                    <!-- 第三列 -->
+                    <th>立方米</th>
+                    <th>千米</th>
+                    <th>千米</th>
+                    <th>万元</th>
+                    <th>万元</th>
+                    <th>万元</th>
+                    <th>万元</th>
+                    <th>万亩</th>
+                  </tr>
+                </thead>
+              </table>
+            </div>
+          </div>
       </div>
+
     </div>
 
+      
     
     <!-- <div class="row">
       <div class="col-xs-12" style="padding:0 0;">
