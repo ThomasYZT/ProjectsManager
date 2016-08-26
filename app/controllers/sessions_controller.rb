@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
 				if params[:password] == '123456'
 					session[:company_id] = params[:company_id]
 					session[:number] = params[:number]
-					redirect_to dashboard_path
+					redirect_to home_page_index_path
 				else 
 					redirect_to home_path, alert: '密码错误!'
 				end
