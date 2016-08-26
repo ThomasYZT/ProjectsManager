@@ -92,108 +92,30 @@
     }
   });
   $(".search_place").click(function(){
+    var startTime = $(".start_year").select2("data")[0].text
+    var endTime = $(".end_year").select2("data")[0].text
+    var year　= "";
+    if(startTime == endTime){
+      year = startTime;
+    }else{
+      year = startTime.slice(0,4) + ' - ' + endTime.slice(0,4) + " 年";
+    }
+
     if($(".city").find('select').select2("val")  == "" ){
-      $(".place_nav").text("湖南省数据统计分析")
+      $(".place_nav").text(year+"湖南省数据统计分析")
     }else{
       if($(".county").find('select').select2("val") == ""){
-        $(".place_nav").html('湖南省<small style="color:white;">／'+$(".city").find('select').select2("data")[0].text+'数据统计分析</small>')
+        $(".place_nav").html(year+'湖南省<small style="color:white;">／'+$(".city").find('select').select2("data")[0].text+'数据统计分析</small>')
       }else{
-        $(".place_nav").html('湖南省<small style="color:white;">/'+$(".city").find('select').select2("data")[0].text+'</small><small style="color:white;">/'+$(".county").find('select').select2("data")[0].text+'统计分析</small>')
+        $(".place_nav").html(year+'湖南省<small style="color:white;">/'+$(".city").find('select').select2("data")[0].text+'</small><small style="color:white;">/'+$(".county").find('select').select2("data")[0].text+'统计分析</small>')
       }
     }
+    initChart();
   });
-  $(".year").change(function(){
-    //alert($(".year").select2("data")[0].text)
-    $('#container').highcharts({
-      chart: {
-          plotBackgroundColor: null,
-          plotBorderWidth: null,
-          plotShadow: false
-      },
-      title: {
-          text: $(".year").select2("data")[0].text+ ' 年度不同项目金额比例'
-      },
-      tooltip: {
-        pointFormat: '{series.name}: <b>{point.y}</b>'
-      },
-      credits: { enabled: false},
-      plotOptions: {
-          pie: {
-              allowPointSelect: true,
-              cursor: 'pointer',
-              dataLabels: {
-                  enabled: true,
-                  color: '#000000',
-                  connectorColor: '#000000',
-                  format: '<b>{point.name}</b>: {point.percentage:.1f} %'
-              }
-          }
-      },
-      series: [{
-          type: 'pie',
-          name: '金额数量(万元)',
-          data: [
-              ['烟水配套工程',   52832],
-              {
-                  name: '烟叶调制设施',
-                  y: 8575,
-                  sliced: true,
-                  selected: true
-              },
-              ['育苗大棚',  0],
-              ['机耕路',   0],
-              ['烟用机械',  0],
-              ['其他',  0]
-          ]
-      }]
-    });
-
-    $('#container1').highcharts({
-        chart: {
-            plotBackgroundColor: null,
-            plotBorderWidth: null,
-            plotShadow: false
-        },
-        title: {
-            text: $(".year").select2("data")[0].text+' 年度不同项目数量比例'
-        },
-        tooltip: {
-          pointFormat: '{series.name}: <b>{point.y}</b>'
-        },
-        credits: { enabled: false},
-        plotOptions: {
-            pie: {
-                allowPointSelect: true,
-                cursor: 'pointer',
-                dataLabels: {
-                    enabled: true,
-                    color: '#000000',
-                    connectorColor: '#000000',
-                    format: '<b>{point.name}</b>: {point.percentage:.1f} %'
-                }
-            }
-        },
-        series: [{
-            type: 'pie',
-            name: '项目数量(个／条)',
-            data: [
-                ['烟水配套工程',   20907],
-                {
-                    name: '烟叶调制设施',
-                    y: 5486,
-                    sliced: true,
-                    selected: true
-                },
-                ['育苗大棚',  0],
-                ['机耕路',   0],
-                ['烟用机械',  0],
-                ['其他',  0]
-            ]
-        }]
-    });
-  })
+  var colors = Highcharts.getOptions().colors;
+  
   $(".select2").select2();
-  $('#container').highcharts({
+  /*$('#container').highcharts({
       chart: {
           plotBackgroundColor: null,
           plotBorderWidth: null,
@@ -235,52 +157,8 @@
               ['其他',  0]
           ]
       }]
-  });
-
-  $('#container1').highcharts({
-      chart: {
-          plotBackgroundColor: null,
-          plotBorderWidth: null,
-          plotShadow: false
-      },
-      title: {
-          text: '2016 年度不同项目数量比例'
-      },
-      tooltip: {
-        pointFormat: '{series.name}: <b>{point.y}</b>'
-      },
-      credits: { enabled: false},
-      plotOptions: {
-          pie: {
-              allowPointSelect: true,
-              cursor: 'pointer',
-              dataLabels: {
-                  enabled: true,
-                  color: '#000000',
-                  connectorColor: '#000000',
-                  format: '<b>{point.name}</b>: {point.percentage:.1f} %'
-              }
-          }
-      },
-      series: [{
-          type: 'pie',
-          name: '项目数量(个／条)',
-          data: [
-              ['烟水配套工程',   20907],
-              {
-                  name: '烟叶调制设施',
-                  y: 5486,
-                  sliced: true,
-                  selected: true
-              },
-              ['育苗大棚',  0],
-              ['机耕路',   0],
-              ['烟用机械',  0],
-              ['其他',  0]
-          ]
-      }]
-  });
-
+  });*/
+  initChart();
   var dashboard_data = [
     {
       name: "合计",
@@ -397,4 +275,146 @@
   $("#tTrolleys_filter input[type=search]").css({ width: "auto" });
   $("#tTrolleys_filter").find("input").wrap('<div class="box-tools"><div class="input-group input-group-sm" style="width:150px;"></div></div>');
   $("#tTrolleys_filter").find(".input-group").append('<div class="input-group-btn"><button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button></div>');
+
+  function initChart(){
+    $('#container').highcharts({
+        chart: {
+            type: 'column'
+        },
+        credits: { enabled: false},
+        title: {
+            text: '2016 年度不同项目金额统计图'
+        },
+        subtitle: {
+            text: ''
+        },
+        xAxis: {
+            categories: [
+                '烟水配套工程',
+                '烟叶调制设施',
+                '育苗大棚',
+                '机耕路',
+                '烟用机械',
+                '其他'
+            ]
+        },
+        yAxis: {
+            min: 0,
+            title: {
+                text: ''
+            }
+        },
+        tooltip: {
+            headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+            pointFormat: '<tr><td style="color:#87CEFA;padding:0">金额数量(万元): </td>' +
+                '<td style="padding:0"><b>{point.y:.1f}</b></td></tr>',
+            footerFormat: '</table>',
+            shared: true,
+            useHTML: true
+        },
+        plotOptions: {
+            column: {
+                pointPadding: 0.2,
+                borderWidth: 0,
+                dataLabels: {
+                    enabled: true,
+                    color: colors[1],
+                    style: {
+                        fontWeight: 'bold'
+                    },
+                    formatter:function(){
+                      console.log(this)
+                      var total = 0;
+                      for(var i=0;i<this.series.yData.length;i++){
+                        total += this.series.yData[i]
+                      }
+                      return (this.y/total * 100).toFixed(2)  + "%"
+                    }
+                }
+            }
+        },
+        series: [{
+          color:'white',
+          type:'column',
+          data: [
+              {
+                  name: '烟水配套工程',
+                  y: 52832,
+                  color:colors[3]
+              },
+              {
+                  name: '烟叶调制设施',
+                  y: 8575,
+                  color:colors[8],
+                  sliced: true,
+                  selected: true
+              },
+              {
+                  name: '育苗大棚',
+                  y: 0,
+                  color:colors[4]
+              },
+              {
+                  name: '机耕路',
+                  y: 0,
+                  color:colors[5]
+              },
+              {
+                  name: '烟用机械',
+                  y: 0,
+                  color:colors[6]
+              },
+              {
+                  name: '其他',
+                  y: 0,
+                  color:colors[7]
+              }
+          ]
+      }]
+    });
+
+  $('#container1').highcharts({
+      chart: {
+          plotBackgroundColor: null,
+          plotBorderWidth: null,
+          plotShadow: false
+      },
+      title: {
+          text: '2016 年度不同项目数量比例'
+      },
+      tooltip: {
+        pointFormat: '{series.name}: <b>{point.y}</b>'
+      },
+      credits: { enabled: false},
+      plotOptions: {
+          pie: {
+              allowPointSelect: true,
+              cursor: 'pointer',
+              dataLabels: {
+                  enabled: true,
+                  color: '#000000',
+                  connectorColor: '#000000',
+                  format: '<b>{point.name}</b>: {point.percentage:.1f} %'
+              }
+          }
+      },
+      series: [{
+          type: 'pie',
+          name: '项目数量(个／条)',
+          data: [
+              ['烟水配套工程',   20907],
+              {
+                  name: '烟叶调制设施',
+                  y: 5486,
+                  sliced: true,
+                  selected: true
+              },
+              ['育苗大棚',  0],
+              ['机耕路',   0],
+              ['烟用机械',  0],
+              ['其他',  0]
+          ]
+      }]
+  });
+  }
 })(jQuery)

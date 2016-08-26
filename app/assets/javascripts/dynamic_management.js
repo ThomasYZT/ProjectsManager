@@ -133,191 +133,28 @@
     }
   });
   $(".search_place").click(function(){
+    var startTime = $(".start_year").select2("data")[0].text
+    var endTime = $(".end_year").select2("data")[0].text
+    var year　= "";
+    if(startTime == endTime){
+      year = startTime;
+    }else{
+      year = startTime.slice(0,4) + ' - ' + endTime.slice(0,4) + " 年";
+    }
+
     if($(".city").find('select').select2("val")  == "" ){
-      $(".place_nav").text("湖南省数据统计分析")
+      $(".place_nav").text(year + "湖南省数据统计分析")
     }else{
       if($(".county").find('select').select2("val") == ""){
-        $(".place_nav").html('湖南省<small style="color:white;">／'+$(".city").find('select').select2("data")[0].text+'数据统计分析</small>')
+        $(".place_nav").html(year+'湖南省<small style="color:white;">／'+$(".city").find('select').select2("data")[0].text+'数据统计分析</small>')
       }else{
-        $(".place_nav").html('湖南省<small style="color:white;">/'+$(".city").find('select').select2("data")[0].text+'</small><small style="color:white;">/'+$(".county").find('select').select2("data")[0].text+'统计分析</small>')
+        $(".place_nav").html(year+'湖南省<small style="color:white;">/'+$(".city").find('select').select2("data")[0].text+'</small><small style="color:white;">/'+$(".county").find('select').select2("data")[0].text+'统计分析</small>')
       }
     }
+    initChart();
   });
-  $(".year").change(function(){
-    //alert($(".year").select2("data")[0].text)
-    $('#container').highcharts({
-      chart: {
-          plotBackgroundColor: null,
-          plotBorderWidth: null,
-          plotShadow: false
-      },
-      title: {
-          text: $(".year").select2("data")[0].text+ ' 年度不同项目类别比例'
-      },
-      tooltip: {
-        pointFormat: '{series.name}: <b>{point.y}</b>'
-      },
-      credits: { enabled: false},
-      plotOptions: {
-          pie: {
-              allowPointSelect: true,
-              cursor: 'pointer',
-              dataLabels: {
-                  enabled: true,
-                  color: '#000000',
-                  connectorColor: '#000000',
-                  format: '<b>{point.name}</b>: {point.percentage:.1f} %'
-              }
-          }
-      },
-      series: [{
-          type: 'pie',
-          name: '数量(个／条)',
-          data: [
-              ['报废项目',   52832],
-              {
-                  name: '闲置项目',
-                  y: 8575,
-                  sliced: true,
-                  selected: true
-              },
-              ['损毁项目',  0],
-              ['已建项目',   0],
-              ['未建项目',  0]
-          ]
-      }]
-    });
-
-    $('#container1').highcharts({
-      chart: {
-          plotBackgroundColor: null,
-          plotBorderWidth: null,
-          plotShadow: false
-      },
-      title: {
-          text: $(".year").select2("data")[0].text+' 年度不同项目金额比例'
-      },
-      tooltip: {
-        pointFormat: '{series.name}: <b>{point.y}</b>'
-      },
-      credits: { enabled: false},
-      plotOptions: {
-          pie: {
-              allowPointSelect: true,
-              cursor: 'pointer',
-              dataLabels: {
-                  enabled: true,
-                  color: '#000000',
-                  connectorColor: '#000000',
-                  format: '<b>{point.name}</b>: {point.percentage:.1f} %'
-              }
-          }
-      },
-      series: [{
-          type: 'pie',
-          name: '项目数量(万元)',
-          data: [
-              ['报废项目',   20907],
-              {
-                  name: '闲置项目',
-                  y: 5486,
-                  sliced: true,
-                  selected: true
-              },
-              ['损毁项目',  0],
-              ['已建项目',   0],
-              ['未建项目',  0]
-          ]
-      }]
-    });
-  })
   $(".select2").select2();
-  $('#container').highcharts({
-      chart: {
-          plotBackgroundColor: null,
-          plotBorderWidth: null,
-          plotShadow: false
-      },
-      title: {
-          text: '2016 年度不同类别项目比例'
-      },
-      tooltip: {
-        pointFormat: '{series.name}: <b>{point.y}</b>'
-      },
-      credits: { enabled: false},
-      plotOptions: {
-          pie: {
-              allowPointSelect: true,
-              cursor: 'pointer',
-              dataLabels: {
-                  enabled: true,
-                  color: '#000000',
-                  connectorColor: '#000000',
-                  format: '<b>{point.name}</b>: {point.percentage:.1f} %'
-              }
-          }
-      },
-      series: [{
-          type: 'pie',
-          name: '数量(个／条)',
-          data: [
-              ['报废项目',   52832],
-              {
-                  name: '闲置项目',
-                  y: 8575,
-                  sliced: true,
-                  selected: true
-              },
-              ['损毁项目',  0],
-              ['已建项目',   0],
-              ['未建项目',  0]
-          ]
-      }]
-  });
-
-  $('#container1').highcharts({
-      chart: {
-          plotBackgroundColor: null,
-          plotBorderWidth: null,
-          plotShadow: false
-      },
-      title: {
-          text: '2016 年度不同项目金额比例'
-      },
-      tooltip: {
-        pointFormat: '{series.name}: <b>{point.y}</b>'
-      },
-      credits: { enabled: false},
-      plotOptions: {
-          pie: {
-              allowPointSelect: true,
-              cursor: 'pointer',
-              dataLabels: {
-                  enabled: true,
-                  color: '#000000',
-                  connectorColor: '#000000',
-                  format: '<b>{point.name}</b>: {point.percentage:.1f} %'
-              }
-          }
-      },
-      series: [{
-          type: 'pie',
-          name: '项目数量(万元)',
-          data: [
-              ['报废项目',   20907],
-              {
-                  name: '闲置项目',
-                  y: 5486,
-                  sliced: true,
-                  selected: true
-              },
-              ['损毁项目',  0],
-              ['已建项目',   0],
-              ['未建项目',  0]
-          ]
-      }]
-  });
-  
+  initChart();
 	var data = [
         {
           item_code: "00001",
@@ -545,5 +382,266 @@
       $("#tTrolleys4_filter").find("input").wrap('<div class="box-tools"><div class="input-group input-group-sm" style="width:150px;"></div></div>');
       $("#tTrolleys4_filter").find(".input-group").append('<div class="input-group-btn"><button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button></div>');
 
+function initChart(){
+  $('#container').highcharts({
+      chart: {
+          plotBackgroundColor: null,
+          plotBorderWidth: null,
+          plotShadow: false
+      },
+      title: {
+          text: '已建项目统计'
+      },
+      tooltip: {
+        pointFormat: '{series.name}: <b>{point.y}</b>'
+      },
+      credits: { enabled: false},
+      plotOptions: {
+          pie: {
+              allowPointSelect: true,
+              cursor: 'pointer',
+              dataLabels: {
+                  enabled: true,
+                  color: '#000000',
+                  connectorColor: '#000000',
+                  format: '<b>{point.name}</b>: {point.percentage:.2f} %'
+              }
+          }
+      },
+      series: [{
+          type: 'pie',
+          name: '项目数量(个／条)',
+          data: [
+              ['烟田水利设施',   53090],
+              {
+                  name: '机耕路',
+                  y: 3526,
+                  sliced: true,
+                  selected: true
+              },
+              ['烟叶调制设施',  66687],
+              ['田间机械化',   23272],
+              ['育苗设施',  885],
+              ['土地整理', 15]
+          ]
+      }]
+  });
 
+  $('#container1').highcharts({
+      chart: {
+          plotBackgroundColor: null,
+          plotBorderWidth: null,
+          plotShadow: false
+      },
+      title: {
+          text: '正常使用项目统计'
+      },
+      tooltip: {
+        pointFormat: '{series.name}: <b>{point.y}</b>'
+      },
+      credits: { enabled: false},
+      plotOptions: {
+          pie: {
+              allowPointSelect: true,
+              cursor: 'pointer',
+              dataLabels: {
+                  enabled: true,
+                  color: '#000000',
+                  connectorColor: '#000000',
+                  format: '<b>{point.name}</b>: {point.percentage:.2f} %'
+              }
+          }
+      },
+      series: [{
+          type: 'pie',
+          name: '项目数量(个／条)',
+          data: [
+              ['烟田水利设施',   42532],
+              {
+                  name: '机耕路',
+                  y: 3210,
+                  sliced: true,
+                  selected: true
+              },
+              ['烟叶调制设施',  55621],
+              ['田间机械化',   20435],
+              ['育苗设施',  822],
+              ['土地整理', 15]
+          ]
+      }]
+  });
+  
+  $('#container2').highcharts({
+      chart: {
+          plotBackgroundColor: null,
+          plotBorderWidth: null,
+          plotShadow: false
+      },
+      title: {
+          text: '部分损毁可修复项目统计'
+      },
+      tooltip: {
+        pointFormat: '{series.name}: <b>{point.y}</b>'
+      },
+      credits: { enabled: false},
+      plotOptions: {
+          pie: {
+              allowPointSelect: true,
+              cursor: 'pointer',
+              dataLabels: {
+                  enabled: true,
+                  color: '#000000',
+                  connectorColor: '#000000',
+                  format: '<b>{point.name}</b>: {point.percentage:.2f} %'
+              }
+          }
+      },
+      series: [{
+          type: 'pie',
+          name: '项目数量(个／条)',
+          data: [
+              ['烟田水利设施',   6249],
+              {
+                  name: '机耕路',
+                  y: 310,
+                  sliced: true,
+                  selected: true
+              },
+              ['烟叶调制设施',  7103],
+              ['田间机械化',   2837],
+              ['育苗设施',  59],
+              ['土地整理', 0]
+          ]
+      }]
+  });
+  $('#container3').highcharts({
+      chart: {
+          plotBackgroundColor: null,
+          plotBorderWidth: null,
+          plotShadow: false
+      },
+      title: {
+          text: '完全损毁项目统计'
+      },
+      tooltip: {
+        pointFormat: '{series.name}: <b>{point.y}</b>'
+      },
+      credits: { enabled: false},
+      plotOptions: {
+          pie: {
+              allowPointSelect: true,
+              cursor: 'pointer',
+              dataLabels: {
+                  enabled: true,
+                  color: '#000000',
+                  connectorColor: '#000000',
+                  format: '<b>{point.name}</b>: {point.percentage:.2f} %'
+              }
+          }
+      },
+      series: [{
+          type: 'pie',
+          name: '项目数量(个／条)',
+          data: [
+              ['烟田水利设施',   4309],
+              {
+                  name: '机耕路',
+                  y: 6,
+                  sliced: true,
+                  selected: true
+              },
+              ['烟叶调制设施',  2217],
+              ['田间机械化',   0],
+              ['育苗设施',  1],
+              ['土地整理', 0]
+          ]
+      }]
+  });
+  $('#container4').highcharts({
+      chart: {
+          plotBackgroundColor: null,
+          plotBorderWidth: null,
+          plotShadow: false
+      },
+      title: {
+          text: '闲置项目'
+      },
+      tooltip: {
+        pointFormat: '{series.name}: <b>{point.y}</b>'
+      },
+      credits: { enabled: false},
+      plotOptions: {
+          pie: {
+              allowPointSelect: true,
+              cursor: 'pointer',
+              dataLabels: {
+                  enabled: true,
+                  color: '#000000',
+                  connectorColor: '#000000',
+                  format: '<b>{point.name}</b>: {point.percentage:.2f} %'
+              }
+          }
+      },
+      series: [{
+          type: 'pie',
+          name: '项目数量(个／条)',
+          data: [
+              ['烟田水利设施',   0],
+              {
+                  name: '机耕路',
+                  y: 0,
+                  sliced: true,
+                  selected: true
+              },
+              ['烟叶调制设施',  1746],
+              ['田间机械化',   0],
+              ['育苗设施',  3],
+              ['土地整理', 0]
+          ]
+      }]
+  });
+  $('#container5').highcharts({
+      chart: {
+          plotBackgroundColor: null,
+          plotBorderWidth: null,
+          plotShadow: false
+      },
+      title: {
+          text: '核销项目统计'
+      },
+      tooltip: {
+        pointFormat: '{series.name}: <b>{point.y}</b>'
+      },
+      credits: { enabled: false},
+      plotOptions: {
+          pie: {
+              allowPointSelect: true,
+              cursor: 'pointer',
+              dataLabels: {
+                  enabled: true,
+                  color: '#000000',
+                  connectorColor: '#000000',
+                  format: '<b>{point.name}</b>: {point.percentage:.2f} %'
+              }
+          }
+      },
+      series: [{
+          type: 'pie',
+          name: '项目数量(个／条)',
+          data: [
+              ['烟田水利设施',   0],
+              {
+                  name: '机耕路',
+                  y: 0,
+                  sliced: true,
+                  selected: true
+              },
+              ['烟叶调制设施',  1746],
+              ['田间机械化',   0],
+              ['育苗设施',  3],
+              ['土地整理', 0]
+          ]
+      }]
+  });
+}
 })(jQuery)

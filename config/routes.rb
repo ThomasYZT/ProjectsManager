@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :project_search
   resources :project_apply
   resources :dynamic_management
+  resources :home_page
   controller :sessions do
     post 'login' => :create
     delete 'logout' => :destroy

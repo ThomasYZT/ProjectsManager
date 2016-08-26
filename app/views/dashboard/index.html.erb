@@ -45,24 +45,9 @@
         </div>
       </div>
       <div class="col-md-2">
-        <button class="btn btn-block btn-default search_place" style="margin-top: 20px;border-radius: 20px;">统计</button>
-      </div>
-    </div>
-    
-    <div class="row">
-      <div class="col-md-12" style="padding:0 0;margin-bottom:15px;">
-        <div class="row" style="background-color:#f39c12;border-bottom-left-radius: 3px;border-bottom-right-radius: 3px;border-top-left-radius: 3px;border-top-right-radius: 3px;box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);font-weight: bold;margin-bottom: 4px;padding-bottom: 5px;padding-left: 10px;padding-right: 10px;padding-top: 5px;text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);">
-          <h4 style="color: white;margin-left: 20px;" class="place_nav">
-            湖南省数据统计分析
-            <!-- <small style="color:white;">／株洲市数据统计分析</small>
-            <small style="color:white;">／株洲市数据统计分析</small> -->
-          </h4>
-        </div>
-      </div>
-      <div class="row" style="margin-bottom: 15px;">
-        <div class="col-md-1"><p style="line-height:28px;margin:0 0 0 15px;text-align: center;">年份选择：</p></div>
-        <div class="col-md-3">
-          <select data-tags="true" data-placeholder="请选择年份" style="width: 100%;" class="select2 select2-hidden-accessible year">
+        <div class="form-group">
+          <label>起始年份：</label>
+          <select data-tags="true" data-placeholder="请选择年份" style="width: 100%;" class="select2 select2-hidden-accessible start_year">
             <option>2016年</option>
             <option>2015年</option>
             <option>2014年</option>
@@ -79,7 +64,44 @@
             <option>2003年</option>
             <option>2002年</option>
           </select>
-        </div> 
+        </div>
+      </div>
+      <div class="col-md-2">
+        <div class="form-group">
+          <label>结束年份：</label>
+          <select data-tags="true" data-placeholder="请选择年份" style="width: 100%;" class="select2 select2-hidden-accessible end_year">
+            <option>2016年</option>
+            <option>2015年</option>
+            <option>2014年</option>
+            <option>2013年</option>
+            <option>2014年</option>
+            <option>2011年</option>
+            <option>2010年</option>
+            <option>2009年</option>
+            <option>2008年</option>
+            <option>2007年</option>
+            <option>2006年</option>
+            <option>2005年</option>
+            <option>2004年</option>
+            <option>2003年</option>
+            <option>2002年</option>
+          </select>
+        </div>
+      </div>
+      <div class="col-md-2">
+        <button class="btn btn-block btn-default search_place" style="margin-top: 20px;border-radius: 20px;">统计</button>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-md-12" style="padding:0 0;margin-bottom:15px;">
+        <div class="row" style="background-color:#f39c12;border-bottom-left-radius: 3px;border-bottom-right-radius: 3px;border-top-left-radius: 3px;border-top-right-radius: 3px;box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);font-weight: bold;margin-bottom: 4px;padding-bottom: 5px;padding-left: 10px;padding-right: 10px;padding-top: 5px;text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);">
+          <h4 style="color: white;margin-left: 20px;" class="place_nav">
+            2016年湖南省数据统计分析
+            <!-- <small style="color:white;">／株洲市数据统计分析</small>
+            <small style="color:white;">／株洲市数据统计分析</small> -->
+          </h4>
+        </div>
       </div>
 
       <!-- <div class="col-md-4">
