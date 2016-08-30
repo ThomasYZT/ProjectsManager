@@ -87,7 +87,33 @@
         </div>
       </div>
       <div class="col-md-2">
-        <button class="btn btn-block btn-default search_place" style="margin-top: 20px;border-radius: 20px;">统计</button>
+        <div class="form-group">
+          <label>项目类型：</label>
+          <select data-tags="true" data-placeholder="请选择项目类型" style="width: 100%;" class="select2 select2-hidden-accessible p_type">
+            <option></option>
+            <option value="1">烟田水利设施</option>
+            <option value="2">机耕路</option>
+            <option value="3">烟叶调制设备</option>
+            <option value="4">田间机械化</option>
+            <option value="5">育苗设施</option>
+            <option value="6">土地整理</option>
+          </select>
+        </div>
+      </div>
+      <div class="col-md-2" style="display: none;">
+        <div class="form-group">
+          <label>项目：</label>
+          <select data-tags="true" data-placeholder="请选择项目" style="width: 100%;" class="select2 select2-hidden-accessible projects">
+            <option></option>
+
+          </select>
+        </div>
+      </div>
+      
+      <div class="col-md-12" style="margin-bottom:20px;">
+        <div class="col-md-1 col-md-offset-11">
+          <button class="btn btn-block btn-default search_place" style="margin-top: 20px;border-radius: 20px;">统计</button>
+        </div>
       </div>
     </div>
     <div class="row">
@@ -101,32 +127,7 @@
         </div>
       </div>
 
-
-      <!-- <div class="col-md-4">
-        <div class="info-box bg-yellow">
-          <span class="info-box-icon"><i class="ion ion-ios-pricetag-outline"></i></span>
-      
-          <div class="info-box-content">
-            <span class="info-box-text">项目数量</span>
-            <span class="info-box-number">5,200</span>            
-            <span class="progress-description">
-              本月增长了30%
-            </span>
-          </div>
-        </div>
-        <div class="info-box bg-green">
-          <span class="info-box-icon"><i class="ion ion-ios-heart-outline"></i></span>
-      
-          <div class="info-box-content">
-            <span class="info-box-text">项目金额</span>
-            <span class="info-box-number">92,050</span>
-            <span class="progress-description">
-              本月增长了20%
-            </span>
-          </div>
-        </div>
-      </div> -->
-      <div class="col-md-12" style="margin-bottom: 20px;">
+      <div class="col-md-12 charts" style="margin-bottom: 20px;">
         <div class="col-md-4">
           <div id="container" style="width:100%;height:350px"></div>
         </div>
@@ -137,7 +138,7 @@
           <div id="container2" style="width:100%;height:350px"></div>
         </div>
       </div>
-      <div class="col-md-12" style="margin-bottom: 20px;">
+      <div class="col-md-12 charts" style="margin-bottom: 20px;">
         <div class="col-md-4">
           <div id="container3" style="width:100%;height:350px"></div>
         </div>
@@ -162,7 +163,7 @@
               <li class="pull-right header"><a href="/dynamic_management/new" style="font-size:15px;width:110px;height:35px;border-radius:5px;background-color: #367fa9;padding:2px 2px;text-align: center;color:white;line-height:35px;" type="button">申请报废</a></li>
             </ul>
             <div class="tab-content no-padding">
-              <div id="analysis" class="tab-pane active" style="position: relative; height: 300px;">
+              <div id="analysis" class="tab-pane active" style="position: relative; height: 950px;">
                   <br>
                   <div class="col-md-12">
                     <table class="table table-striped table-hover" id="tTrolleys_a">
@@ -206,6 +207,9 @@
                           <th>项目编号</th>
                           <th>项目名称</th>
                           <th>项目类别</th>
+                          <th>项目金额</th>
+                          <th>档案状态</th>
+                          <th>档案资料</th>
                         </tr>
                       </thead>
                     </table>
@@ -220,6 +224,9 @@
                           <th>项目编号</th>
                           <th>项目名称</th>
                           <th>项目类别</th>
+                          <th>项目金额</th>
+                          <th>档案状态</th>
+                          <th>档案资料</th>
                         </tr>
                       </thead>
                     </table>
@@ -234,6 +241,9 @@
                           <th>项目编号</th>
                           <th>项目名称</th>
                           <th>项目类别</th>
+                          <th>项目金额</th>
+                          <th>档案状态</th>
+                          <th>档案资料</th>
                         </tr>
                       </thead>
                     </table>
@@ -248,6 +258,9 @@
                           <th>项目编号</th>
                           <th>项目名称</th>
                           <th>项目类别</th>
+                          <th>项目金额</th>
+                          <th>档案状态</th>
+                          <th>档案资料</th>
                         </tr>
                       </thead>
                     </table>
@@ -262,6 +275,9 @@
                           <th>项目编号</th>
                           <th>项目名称</th>
                           <th>项目类别</th>
+                          <th>项目金额</th>
+                          <th>档案状态</th>
+                          <th>档案资料</th>
                         </tr>
                       </thead>
                     </table>
@@ -271,5 +287,25 @@
           </div>
         </div>
       </div>
+        
   </section>
+  <div id="searchModal" class="modal modal-primary fade in">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button aria-label="Close" data-dismiss="modal" class="close" type="button">
+            <span aria-hidden="true">×</span></button>
+          <h4 class="modal-title">档案资料</h4>
+        </div>
+        <div class="modal-body">
+          <p><img src="/img/005.jpg" style="width:100%;height:700px;" alt=""></p>
+        </div>
+        <div class="modal-footer">
+          <button data-dismiss="modal" class="btn btn-outline pull-left" type="button">关闭</button>
+        </div>
+      </div>
+      <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+  </div>
 <% end %>

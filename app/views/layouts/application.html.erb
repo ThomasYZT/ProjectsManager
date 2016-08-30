@@ -84,30 +84,43 @@
             <div id="navbar-collapse" class="collapse navbar-collapse pull-left"　>
               <ul class="nav navbar-nav">
                 <li><a href="/home_page">首页</a></li>
-                <li><a href="/#">实施管理</a></li>
-                <li><a href="/dashboard">数据统计分析</a></li>
                 <li class="dropdown">
                   <a data-toggle="dropdown" class="dropdown-toggle" href="#">项目管理 <span class="caret"></span></a>
                   <ul role="menu" class="dropdown-menu project_management">
                     
                   </ul>
                 </li>
+                <li><a href="#">进度管理</a></li>
+                <li class="dropdown">
+                  <a data-toggle="dropdown" class="dropdown-toggle" href="/dynamic_management">档案管理 <span class="caret"></span></a>
+                  <ul role="menu" class="dropdown-menu">
+                    <li><a href="#">补贴</a></li>
+                    <li><a href="#">资金差距</a></li>
+                    <li><a href="#">档案资料</a></li>
+                    <li><a href="#">项目移交</a></li>
+                  </ul>
+                </li>
                 <li class="dropdown">
                   <a data-toggle="dropdown" class="dropdown-toggle" href="/dynamic_management">动态管理 <span class="caret"></span></a>
                   <ul role="menu" class="dropdown-menu">
+                    <li><p style="padding-left: 20px;">核销管理</p></li>
+                    <li class="divider"></li>
+                    <li><a href="#">核销申请</a></li>
+                    <li><a href="#">市级审核</a></li>
+                    <li><a href="#">省级审批</a></li>
+                    <li><a href="#">核销存档</a></li>
+                    <li class="divider"></li>
+                    <li><p style="padding-left: 20px;">数据分析</p></li>
+                    <li class="divider"></li>
                     <li><a href="/dynamic_management">统计查询</a></li>
-                    <li class="divider"></li>
                     <li><a href="/dynamic_management">已建项目</a></li>
-                    <li class="divider"></li>
                     <li><a href="/dynamic_management">正常使用项目</a></li>
-                    <li class="divider"></li>
                     <li><a href="/dynamic_management">部分损毁可修复项目</a></li>
-                    <li class="divider"></li>
                     <li><a href="/dynamic_management">闲置项目</a></li>
-                    <li class="divider"></li>
                     <li><a href="/dynamic_management">核销项目</a></li>
                   </ul>
                 </li>
+                <li><a href="/dashboard">数据统计分析</a></li>
               </ul>
               <form role="search" class="navbar-form navbar-left">
                 <div class="form-group">
@@ -158,16 +171,29 @@
     <script>
       (function($){
         if($("#code").text().length == 10){
-          $(".project_management").append('<li><a href="/project_application">项目申请</a></li>'+                              '<li class="divider"></li>'+
-                                          '<li><a href="/project_search">项目查询</a></li>'+
-                                          '<li class="divider"></li>'+
+          $(".project_management").append('<li><p style="padding-left:20px;">项目申请</p></li>'+                              '<li class="divider"></li>'+
+                                          '<li><a href="/project_search">申请书</a></li>'+
                                           '<li><a href="/project_search">申请公示</a></li>'+
+                                          '<li><a href="/project_search">选点</a></li>'+
+                                          '<li><a href="/project_search">规划设计</a></li>'+
                                           '<li class="divider"></li>'+
-                                          '<li><a href="/project_search">计划上报</a></li>'+
+                                          '<li><p style="padding-left:20px;">立项审批</p></li>'+
                                           '<li class="divider"></li>'+
+                                          '<li><a href="/project_search">上报计划</a></li>'+
+                                          '<li><a href="/project_search">计划批复</a></li>'+
                                           '<li><a href="/project_search">建设公示</a></li>'+
                                           '<li class="divider"></li>'+
-                                          '<li><a href="/project_search">签订补贴合同</a></li>');
+                                          '<li><p style="padding-left:20px;">合同管理</p></li>'+
+                                          '<li class="divider"></li>'+
+                                          '<li><a href="/project_search">签订补贴合同</a></li>'+
+                                          '<li><a href="/project_search">签订施工合同</a></li>'+
+                                          '<li class="divider"></li>'+
+                                          '<li><p style="padding-left:20px;">过程管理</p></li>'+
+                                          '<li class="divider"></li>'+
+                                          '<li><a href="/project_search">成立项目</a></li>'+
+                                          '<li><a href="/project_search">变更</a></li>'+
+                                          '<li><a href="/project_search">签证</a></li>'+
+                                          '<li><a href="/project_search">验收</a></li>');
         }else if($("#code").text().length == 6){
           $(".project_management").append('<li><a href="/project_apply">项目审核</a></li>'+
                                           '<li class="divider"></li>'+

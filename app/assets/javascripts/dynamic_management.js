@@ -1,4 +1,9 @@
 (function($){
+  $(".select2").select2({
+    allowClear: true
+  });
+
+  initChart();
   $('.spin1 .btn:first-of-type').on('click', function() {
       $('.spin1 input').val( parseInt($('.spin1 input').val(), 10) + 1);
     });
@@ -132,6 +137,39 @@
       }
     }
   });
+  $(".p_type").change(function(){
+    switch($(this).select2("val")){
+      case "1":
+        $(".projects").parent().parent().css({display:""});
+        $(".projects").empty();
+        $(".projects").append('<option></option><option value="0">水池</option><option value="1">水窖</option>'+
+                              '<option value="2">管网</option><option value="3">沟渠</option>'+
+                              '<option value="4">机井</option><option value="5">堤灌站</option>'+
+                              '<option value="6">塘垻</option>')
+        break;
+      case "2":
+        $(".projects").parent().parent().css({display:"none"});
+        break;
+      case "3":
+        $(".projects").parent().parent().css({display:""});
+        $(".projects").empty();
+        $(".projects").append('<option></option><option value="1">2.7×8m密集烤房</option>'+
+                              '<option value="2">改造为散叶烘烤的烤房</option><option value="3">改造为烟夹烘烤的烤房</option>'+
+                              '<option value="4">晾房</option><option value="5">烘烤工场</option>')
+        break;
+      case "4":
+        $(".projects").parent().parent().css({display:""});
+        $(".projects").empty();
+        $(".projects").append('<option></option><option value="0">通用设备</option><option value="1">专用设备</option>')
+        break;
+      case "5":
+        $(".projects").parent().parent().css({display:"none"});
+        break;
+      case "6":
+        $(".projects").parent().parent().css({display:"none"});
+        break;
+    }
+  })
   $(".search_place").click(function(){
     var startTime = $(".start_year").select2("data")[0].text
     var endTime = $(".end_year").select2("data")[0].text
@@ -151,34 +189,165 @@
         $(".place_nav").html(year+'湖南省<small style="color:white;">/'+$(".city").find('select').select2("data")[0].text+'</small><small style="color:white;">/'+$(".county").find('select').select2("data")[0].text+'统计分析</small>')
       }
     }
+    
+    if($(".p_type").select2("data")[0].text){
+      $(".charts").css({display:"none"});
+    }else{
+      $(".charts").css({display:""});
+    }
+    
     initChart();
+    
   });
-  $(".select2").select2();
-  initChart();
-	var data = [
+  
+	var data_1 = [
         {
           item_code: "00001",
           item_name: "烟基项目01",
-          item_type: "水池"
-
+          item_type: "水池",
+          item_cost: 20000,
+          doc_statu: "闲置"
         },
         {
-          item_code: "00001",
+          item_code: "00002",
           item_name: "烟基项目02",
-          item_type: "水窖"
-
+          item_type: "水窖",
+          item_cost: 20000,
+          doc_statu: "闲置"
         },
         {
-          item_code: "00001",
+          item_code: "00003",
           item_name: "烟基项目03",
-          item_type: "管网"
-
+          item_type: "管网",
+          item_cost: 20000,
+          doc_statu: "闲置"
         },
         {
-          item_code: "00001",
+          item_code: "00004",
           item_name: "烟基项目04",
-          item_type: "土壤改良"
-
+          item_type: "土壤改良",
+          item_cost: 20000,
+          doc_statu: "闲置"
+        }
+      ];
+  var data_2 = [
+        {
+          item_code: "00005",
+          item_name: "烟基项目01",
+          item_type: "水池",
+          item_cost: 20000,
+          doc_statu: "核销"
+        },
+        {
+          item_code: "00006",
+          item_name: "烟基项目02",
+          item_type: "水窖",
+          item_cost: 20000,
+          doc_statu: "核销"
+        },
+        {
+          item_code: "00007",
+          item_name: "烟基项目03",
+          item_type: "管网",
+          item_cost: 20000,
+          doc_statu: "核销"
+        },
+        {
+          item_code: "00008",
+          item_name: "烟基项目04",
+          item_type: "土壤改良",
+          item_cost: 20000,
+          doc_statu: "核销"
+        }
+      ];
+  var data_3 = [
+        {
+          item_code: "00009",
+          item_name: "烟基项目01",
+          item_type: "水池",
+          item_cost: 20000,
+          doc_statu: "未建"
+        },
+        {
+          item_code: "00010",
+          item_name: "烟基项目02",
+          item_type: "水窖",
+          item_cost: 20000,
+          doc_statu: "未建"
+        },
+        {
+          item_code: "00011",
+          item_name: "烟基项目03",
+          item_type: "管网",
+          item_cost: 20000,
+          doc_statu: "未建"
+        },
+        {
+          item_code: "00012",
+          item_name: "烟基项目04",
+          item_type: "土壤改良",
+          item_cost: 20000,
+          doc_statu: "未建"
+        }
+      ];
+  var data_4 = [
+        {
+          item_code: "00013",
+          item_name: "烟基项目01",
+          item_type: "水池",
+          item_cost: 20000,
+          doc_statu: "损毁"
+        },
+        {
+          item_code: "00014",
+          item_name: "烟基项目02",
+          item_type: "水窖",
+          item_cost: 20000,
+          doc_statu: "损毁"
+        },
+        {
+          item_code: "00015",
+          item_name: "烟基项目03",
+          item_type: "管网",
+          item_cost: 20000,
+          doc_statu: "损毁"
+        },
+        {
+          item_code: "00016",
+          item_name: "烟基项目04",
+          item_type: "土壤改良",
+          item_cost: 20000,
+          doc_statu: "损毁"
+        }
+      ];
+  var data_5 = [
+        {
+          item_code: "00017",
+          item_name: "烟基项目01",
+          item_type: "水池",
+          item_cost: 20000,
+          doc_statu: "已建"
+        },
+        {
+          item_code: "00018",
+          item_name: "烟基项目02",
+          item_type: "水窖",
+          item_cost: 20000,
+          doc_statu: "已建"
+        },
+        {
+          item_code: "00019",
+          item_name: "烟基项目03",
+          item_type: "管网",
+          item_cost: 20000,
+          doc_statu: "已建"
+        },
+        {
+          item_code: "00020",
+          item_name: "烟基项目04",
+          item_type: "土壤改良",
+          item_cost: 20000,
+          doc_statu: "已建"
         }
       ];
   var analysis_data = [
@@ -196,7 +365,7 @@
       yj_cost: 7215
     },
     {
-      name:"烤房",
+      name:"烟田水利设施",
       xz_num: 12312,
       xz_cost: 123124,
       bf_num: 123,
@@ -209,7 +378,7 @@
       yj_cost: 7215
     },
     {
-      name:"大棚",
+      name:"水池",
       xz_num: 12312,
       xz_cost: 123124,
       bf_num: 123,
@@ -222,7 +391,228 @@
       yj_cost: 7215
     },
     {
-      name:"农机",
+      name:"水窖",
+      xz_num: 12312,
+      xz_cost: 123124,
+      bf_num: 123,
+      bf_cost: 87,
+      wj_num: 9486,
+      wj_cost: 912,
+      sh_num: 1992,
+      sh_cost: 12,
+      yj_num: 390,
+      yj_cost: 7215
+    },
+    {
+      name:"管网",
+      xz_num: 12312,
+      xz_cost: 123124,
+      bf_num: 123,
+      bf_cost: 87,
+      wj_num: 9486,
+      wj_cost: 912,
+      sh_num: 1992,
+      sh_cost: 12,
+      yj_num: 390,
+      yj_cost: 7215
+    },
+    {
+      name:"沟渠",
+      xz_num: 12312,
+      xz_cost: 123124,
+      bf_num: 123,
+      bf_cost: 87,
+      wj_num: 9486,
+      wj_cost: 912,
+      sh_num: 1992,
+      sh_cost: 12,
+      yj_num: 390,
+      yj_cost: 7215
+    },
+    {
+      name:"机井",
+      xz_num: 12312,
+      xz_cost: 123124,
+      bf_num: 123,
+      bf_cost: 87,
+      wj_num: 9486,
+      wj_cost: 912,
+      sh_num: 1992,
+      sh_cost: 12,
+      yj_num: 390,
+      yj_cost: 7215
+    },
+    {
+      name:"堤灌站",
+      xz_num: 12312,
+      xz_cost: 123124,
+      bf_num: 123,
+      bf_cost: 87,
+      wj_num: 9486,
+      wj_cost: 912,
+      sh_num: 1992,
+      sh_cost: 12,
+      yj_num: 390,
+      yj_cost: 7215
+    },
+    {
+      name:"塘垻",
+      xz_num: 12312,
+      xz_cost: 123124,
+      bf_num: 123,
+      bf_cost: 87,
+      wj_num: 9486,
+      wj_cost: 912,
+      sh_num: 1992,
+      sh_cost: 12,
+      yj_num: 390,
+      yj_cost: 7215
+    },
+    {
+      name:"机耕路",
+      xz_num: 12312,
+      xz_cost: 123124,
+      bf_num: 123,
+      bf_cost: 87,
+      wj_num: 9486,
+      wj_cost: 912,
+      sh_num: 1992,
+      sh_cost: 12,
+      yj_num: 390,
+      yj_cost: 7215
+    },
+    {
+      name:"烟叶调制设备",
+      xz_num: 12312,
+      xz_cost: 123124,
+      bf_num: 123,
+      bf_cost: 87,
+      wj_num: 9486,
+      wj_cost: 912,
+      sh_num: 1992,
+      sh_cost: 12,
+      yj_num: 390,
+      yj_cost: 7215
+    },
+    {
+      name:"2.7×8m密集烤房",
+      xz_num: 12312,
+      xz_cost: 123124,
+      bf_num: 123,
+      bf_cost: 87,
+      wj_num: 9486,
+      wj_cost: 912,
+      sh_num: 1992,
+      sh_cost: 12,
+      yj_num: 390,
+      yj_cost: 7215
+    },
+    {
+      name:"改造为散叶烘烤的",
+      xz_num: 12312,
+      xz_cost: 123124,
+      bf_num: 123,
+      bf_cost: 87,
+      wj_num: 9486,
+      wj_cost: 912,
+      sh_num: 1992,
+      sh_cost: 12,
+      yj_num: 390,
+      yj_cost: 7215
+    },
+    {
+      name:"改造为烟夹烘烤的",
+      xz_num: 12312,
+      xz_cost: 123124,
+      bf_num: 123,
+      bf_cost: 87,
+      wj_num: 9486,
+      wj_cost: 912,
+      sh_num: 1992,
+      sh_cost: 12,
+      yj_num: 390,
+      yj_cost: 7215
+    },
+    {
+      name:"凉房",
+      xz_num: 12312,
+      xz_cost: 123124,
+      bf_num: 123,
+      bf_cost: 87,
+      wj_num: 9486,
+      wj_cost: 912,
+      sh_num: 1992,
+      sh_cost: 12,
+      yj_num: 390,
+      yj_cost: 7215
+    },
+    {
+      name:"烘烤工厂",
+      xz_num: 12312,
+      xz_cost: 123124,
+      bf_num: 123,
+      bf_cost: 87,
+      wj_num: 9486,
+      wj_cost: 912,
+      sh_num: 1992,
+      sh_cost: 12,
+      yj_num: 390,
+      yj_cost: 7215
+    },
+    {
+      name:"田间机械化",
+      xz_num: 12312,
+      xz_cost: 123124,
+      bf_num: 123,
+      bf_cost: 87,
+      wj_num: 9486,
+      wj_cost: 912,
+      sh_num: 1992,
+      sh_cost: 12,
+      yj_num: 390,
+      yj_cost: 7215
+    },
+    {
+      name:"通用设备",
+      xz_num: 12312,
+      xz_cost: 123124,
+      bf_num: 123,
+      bf_cost: 87,
+      wj_num: 9486,
+      wj_cost: 912,
+      sh_num: 1992,
+      sh_cost: 12,
+      yj_num: 390,
+      yj_cost: 7215
+    },
+    {
+      name:"专用设备",
+      xz_num: 12312,
+      xz_cost: 123124,
+      bf_num: 123,
+      bf_cost: 87,
+      wj_num: 9486,
+      wj_cost: 912,
+      sh_num: 1992,
+      sh_cost: 12,
+      yj_num: 390,
+      yj_cost: 7215
+    },
+    {
+      name:"育苗设施",
+      xz_num: 12312,
+      xz_cost: 123124,
+      bf_num: 123,
+      bf_cost: 87,
+      wj_num: 9486,
+      wj_cost: 912,
+      sh_num: 1992,
+      sh_cost: 12,
+      yj_num: 390,
+      yj_cost: 7215
+    },
+    {
+      name:"土地整理",
       xz_num: 12312,
       xz_cost: 123124,
       bf_num: 123,
@@ -279,11 +669,16 @@
             infoEmpty: "",//筛选为空时左下角的显示。
             infoFiltered: ""//筛选之后的左下角筛选提示，
           },
-          data:data,
+          data:data_1,
           columns:[
             {data:'item_code'},
             {data:'item_name'},
-            {data:'item_type'}
+            {data:'item_type'},
+            {data:'item_cost'},
+            {data:'doc_statu'},
+            {data:'doc_statu',sWidth:"90px",render:function(data){
+              return '<a class="btn btn-primary doc_search">档案查询</a>';
+            }}
           ]
       });
       $("#tTrolleys_filter input[type=search]").css({ width: "auto" });
@@ -302,11 +697,16 @@
             infoEmpty: "",//筛选为空时左下角的显示。
             infoFiltered: ""//筛选之后的左下角筛选提示，
           },
-          data:data,
+          data:data_2,
           columns:[
             {data:'item_code'},
             {data:'item_name'},
-            {data:'item_type'}
+            {data:'item_type'},
+            {data:'item_cost'},
+            {data:'doc_statu'},
+            {data:'doc_statu',sWidth:"90px",render:function(data){
+              return '<a class="btn btn-primary doc_search">档案查询</a>';
+            }}
           ]
       });
       $("#tTrolleys1_filter input[type=search]").css({ width: "auto" });
@@ -325,11 +725,16 @@
             infoEmpty: "",//筛选为空时左下角的显示。
             infoFiltered: ""//筛选之后的左下角筛选提示，
           },
-          data:data,
+          data:data_3,
           columns:[
             {data:'item_code'},
             {data:'item_name'},
-            {data:'item_type'}
+            {data:'item_type'},
+            {data:'item_cost'},
+            {data:'doc_statu'},
+            {data:'doc_statu',sWidth:"90px",render:function(data){
+              return '<a class="btn btn-primary doc_search">档案查询</a>';
+            }}
           ]
       });
       $("#tTrolleys2_filter input[type=search]").css({ width: "auto" });
@@ -348,11 +753,16 @@
             infoEmpty: "",//筛选为空时左下角的显示。
             infoFiltered: ""//筛选之后的左下角筛选提示，
           },
-          data:data,
+          data:data_4,
           columns:[
             {data:'item_code'},
             {data:'item_name'},
-            {data:'item_type'}
+            {data:'item_type'},
+            {data:'item_cost'},
+            {data:'doc_statu'},
+            {data:'doc_statu',sWidth:"90px",render:function(data){
+              return '<a class="btn btn-primary doc_search">档案查询</a>';
+            }}
           ]
       });
       $("#tTrolleys3_filter input[type=search]").css({ width: "auto" });
@@ -371,11 +781,16 @@
             infoEmpty: "",//筛选为空时左下角的显示。
             infoFiltered: ""//筛选之后的左下角筛选提示，
           },
-          data:data,
+          data:data_5,
           columns:[
             {data:'item_code'},
             {data:'item_name'},
-            {data:'item_type'}
+            {data:'item_type'},
+            {data:'item_cost'},
+            {data:'doc_statu'},
+            {data:'doc_statu',sWidth:"90px",render:function(data){
+              return '<a class="btn btn-primary doc_search">档案查询</a>';
+            }}
           ]
       });
       $("#tTrolleys4_filter input[type=search]").css({ width: "auto" });
@@ -644,4 +1059,7 @@ function initChart(){
       }]
   });
 }
+$(".doc_search").click(function(){
+  $("#searchModal").modal("toggle")
+})
 })(jQuery)
