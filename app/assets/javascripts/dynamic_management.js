@@ -142,6 +142,7 @@
       case "1":
         $(".projects").parent().parent().css({display:""});
         $(".projects").empty();
+        $(".projects").val("").trigger("change");
         $(".projects").append('<option></option><option value="0">水池</option><option value="1">水窖</option>'+
                               '<option value="2">管网</option><option value="3">沟渠</option>'+
                               '<option value="4">机井</option><option value="5">堤灌站</option>'+
@@ -153,6 +154,7 @@
       case "3":
         $(".projects").parent().parent().css({display:""});
         $(".projects").empty();
+        $(".projects").val("").trigger("change");
         $(".projects").append('<option></option><option value="1">2.7×8m密集烤房</option>'+
                               '<option value="2">改造为散叶烘烤的烤房</option><option value="3">改造为烟夹烘烤的烤房</option>'+
                               '<option value="4">晾房</option><option value="5">烘烤工场</option>')
@@ -160,6 +162,7 @@
       case "4":
         $(".projects").parent().parent().css({display:""});
         $(".projects").empty();
+        $(".projects").val("").trigger("change");
         $(".projects").append('<option></option><option value="0">通用设备</option><option value="1">专用设备</option>')
         break;
       case "5":
