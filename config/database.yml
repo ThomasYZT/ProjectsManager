@@ -5,7 +5,7 @@
 # gem 'activerecord-jdbcsqlite3-adapter'
 #
 default: &default
-  adapter: jdbc-sqlite3
+  adapter: sqlite3
 
 # development:
 #   <<: *default
