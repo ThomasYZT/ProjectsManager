@@ -4,8 +4,8 @@
 # Configure Using Gemfile
 # gem 'activerecord-jdbcsqlite3-adapter'
 #
-# default: &default
-#   adapter: sqlite3
+default: &default
+  adapter: jdbc-sqlite3
 
 # development:
 #   <<: *default
