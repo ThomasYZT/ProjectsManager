@@ -1,0 +1,249 @@
+<% content_for :header do %>
+  <p id="code" style="display:none"><%= session[:company_id]%></p>
+  <section class="content-header">
+    <div class="row">
+      <div class="col-xs-12">
+        <ol class="breadcrumb" style="font-size:medium;">
+          <li><a href="/dashboard"><i class="fa fa-dashboard"></i> 首页 </a></li>
+          <li class="active">县级审核</li>
+        </ol>
+      </div>
+    </div>
+  </section>
+<% end %>
+
+<% content_for :content do %>
+  <section class="content" style="margin-top:-25px;" >
+    <div class="row">
+      <div class="col-md-12">
+          <div class="box">
+            <div class="box-body">
+              <table class="table table-striped table-hover" id="tTrolleys">
+                <thead>
+                  <tr style="border-bottom:1px solid gray;">
+                    <th>项目编号</th>
+                    <th>项目类型</th>
+                    <th>申请日期</th>
+                    <th>选点&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-fw fa-long-arrow-right"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;规划设计</th>
+                    <th></th>
+                  </tr>
+                </thead>
+              </table>
+            </div>
+          </div>
+      </div>
+    </div>
+  </section>
+  <div id="details" class="modal fade in" >
+    <div class="modal-dialog" >
+      <div class="modal-content" style="border-radius: 5px;">
+        <div class="modal-header">
+          <button aria-label="Close" data-dismiss="modal" class="close" type="button">
+            <span aria-hidden="true">×</span></button>
+          <h4 class="modal-title" style="margin-left:200px;">项目申请公示</h4>
+        </div>
+        <div class="modal-body" style="font-size:15px;">
+          <p><span style="float: left;"><u>***</u> 乡（镇） <u>***</u> 村民委员会：</span></p>
+          <p style="line-height:30px;text-indent:2em;float: left;">我县烟草部门和烟叶基础办已受理 <u>***</u> 乡（镇）　<u>***</u>　村 <u>***</u> 村民小组烟农提出的关于 <u>***</u> 年度项目区内现代烟草农业基础设施建设项目的申请，其中水池 <u>***</u> 个（　<u>***</u>　立方米），水窖　<u>***</u> 个（ <u>***</u>　立方米），机（水）井　<u>***</u>　个(投资　<u>***</u>　万元)，沟渠　<u>***</u>　条( <u>***</u> 公里)，塘坝整治 <u>***</u>　处(投资 <u>***</u>　万元)，管网　<u>***</u>　处(　<u>***</u>　公里), 提灌站<u>***</u> 个(投资　<u>***</u>　万元)，机耕道路 <u>***</u> 条 <u>***</u> 公里。共需投入建设资金概算　<u>***</u>　万元，其中建设资金　<u>***</u>　万元由烟草部门按照行业有关政策给予补贴，申请项目详细情况见下表，特此公示。对不实、重复上报或虚报项目，欢迎检举揭发。</p>
+          <p>举报电话：</p>
+          <p>附件：项目申请明细表</p>                      
+          <p><span style="margin-left:450px;">县烟叶基础办</span></p>
+          <p><span style="margin-left:450px;">年 <u>***</u> 月 <u>***</u> 日</span></p>
+        </div>
+        <div class="modal-footer">
+          <button data-dismiss="modal" class="btn btn-default pull-right" type="button">关闭</button>
+        </div>
+      </div>
+      <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+  </div>
+  <div id="check_choose_point" class="modal fade in" style="background-color: ">
+    <div class="modal-dialog">
+      <div class="modal-content" style="border-radius: 5px;">
+        <div class="modal-header">
+          <button aria-label="Close" data-dismiss="modal" class="close" type="button">
+            <span aria-hidden="true">×</span></button>
+          <h4 class="modal-title" style="margin-left:200px;">选点报告书</h4>
+        </div>
+        <div class="modal-body" style="font-size:15px;">
+          <form role="form">
+            <div class="box-body">
+              <div class="form-group">
+                <label for="exampleInputEmail1">项目建设规模</label>
+                <input type="text" disabled="disabled" placeholder="填写项目建设规模" value="*********" id="exampleInputEmail1" class="form-control">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputPassword1">建设地点</label>
+                <input type="text" disabled="disabled" placeholder="填写建设地点" value="*********" id="exampleInputPassword1" class="form-control">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputFile">主要建设内容</label>
+                <textarea type="text" disabled="disabled" placeholder="填写主要建设内容" id="exampleInputPassword1" class="form-control">***********</textarea>
+              </div>
+              <div class="form-group">
+                <label for="exampleInputFile">投资资金来源</label>
+                <input type="text" disabled="disabled" placeholder="填写投资资金来源" value="*********" id="exampleInputPassword1" class="form-control">
+              </div>
+            </div>
+            <!-- /.box-body -->
+
+            <div class="box-footer">
+              <a class="btn btn-primary edit">编辑</a>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button data-dismiss="modal" class="btn btn-default pull-right" type="button">关闭</button>
+        </div>
+      </div>
+      <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+  </div>
+  <div id="edit_choose_point" class="modal fade in">
+    <div class="modal-dialog">
+      <div class="modal-content" style="border-radius: 5px;">
+        <div class="modal-header">
+          <button aria-label="Close" data-dismiss="modal" class="close" type="button">
+            <span aria-hidden="true">×</span></button>
+          <h4 class="modal-title" style="margin-left:200px;">编辑选点报告书</h4>
+        </div>
+        <div class="modal-body" style="font-size:15px;">
+          <form role="form">
+            <div class="box-body">
+              <div class="form-group">
+                <label for="exampleInputEmail1">项目建设规模</label>
+                <input type="email" placeholder="填写项目建设规模" id="exampleInputEmail1" class="form-control">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputPassword1">建设地点</label>
+                <input type="password" placeholder="填写建设地点" id="exampleInputPassword1" class="form-control">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputFile">主要建设内容</label>
+                <textarea type="password" placeholder="填写主要建设内容" id="exampleInputPassword1" class="form-control"></textarea>
+              </div>
+              <div class="form-group">
+                <label for="exampleInputFile">投资资金来源</label>
+                <input type="password" placeholder="填写投资资金来源" id="exampleInputPassword1" class="form-control">
+              </div>
+            </div>
+            <!-- /.box-body -->
+
+            <div class="box-footer">
+              <button class="btn btn-success" >提交</button>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button data-dismiss="modal" class="btn btn-default pull-right" type="button">关闭</button>
+        </div>
+      </div>
+      <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+  </div>
+  <div id="check_design" class="modal fade in">
+    <div class="modal-dialog">
+      <div class="modal-content" style="border-radius: 5px;">
+        <div class="modal-header">
+          <button aria-label="Close" data-dismiss="modal" class="close" type="button">
+            <span aria-hidden="true">×</span></button>
+          <h4 class="modal-title" style="margin-left:200px;">项目设计书</h4>
+        </div>
+        <div class="modal-body" style="font-size:15px;">
+          <form role="form">
+            <div class="box-body">
+              <div class="form-group">
+                <label for="exampleInputEmail1">项目名称</label>
+                <input type="email" disabled="disabled" placeholder="********" id="exampleInputEmail1" class="form-control">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputPassword1">组织实施机构</label>
+                <input type="password" disabled="disabled" placeholder="********" id="exampleInputPassword1" class="form-control">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputFile">建设位置</label>
+                <input type="password" disabled="disabled" placeholder="********" id="exampleInputPassword1" class="form-control">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputFile">建设总规模</label>
+                <input type="password" disabled="disabled" placeholder="********" id="exampleInputPassword1" class="form-control">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputFile">总投资</label>
+                <input type="password" disabled="disabled" placeholder="********" id="exampleInputPassword1" class="form-control">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputFile">建设工期</label>
+                <input type="password" disabled="disabled" placeholder="********" id="exampleInputPassword1" class="form-control">
+              </div>
+            </div>
+            <!-- /.box-body -->
+
+            <div class="box-footer">
+              <button class="btn btn-primary edit">编辑</button>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button data-dismiss="modal" class="btn btn-default pull-right" type="button">关闭</button>
+        </div>
+      </div>
+      <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+  </div>
+  <div id="edit_design" class="modal fade in">
+    <div class="modal-dialog">
+      <div class="modal-content" style="border-radius: 5px;">
+        <div class="modal-header">
+          <button aria-label="Close" data-dismiss="modal" class="close" type="button">
+            <span aria-hidden="true">×</span></button>
+          <h4 class="modal-title" style="margin-left:200px;">编辑项目设计书</h4>
+        </div>
+        <div class="modal-body" style="font-size:15px;">
+          <form role="form">
+            <div class="box-body">
+              <div class="form-group">
+                <label for="exampleInputEmail1">项目名称</label>
+                <input type="email" placeholder="填写项目名称" id="exampleInputEmail1" class="form-control">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputPassword1">组织实施机构</label>
+                <input type="password" placeholder="填写组织实施机构" id="exampleInputPassword1" class="form-control">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputFile">建设位置</label>
+                <input type="password" placeholder="填写建设位置" id="exampleInputPassword1" class="form-control">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputFile">建设总规模</label>
+                <input type="password" placeholder="填写建设总规模" id="exampleInputPassword1" class="form-control">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputFile">总投资</label>
+                <input type="password" placeholder="填写总投资" id="exampleInputPassword1" class="form-control">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputFile">建设工期</label>
+                <input type="password" placeholder="填写建设工期" id="exampleInputPassword1" class="form-control">
+              </div>
+            </div>
+            <!-- /.box-body -->
+
+            <div class="box-footer">
+              <button class="btn btn-success" >提交</button>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button data-dismiss="modal" class="btn btn-default pull-right" type="button">关闭</button>
+        </div>
+      </div>
+      <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+  </div>
+<% end %>

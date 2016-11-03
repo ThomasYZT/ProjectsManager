@@ -1,0 +1,2 @@
+module PlanReportedHelper
+end

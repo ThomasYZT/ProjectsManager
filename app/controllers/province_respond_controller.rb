@@ -1,0 +1,2 @@
+class ProvinceRespondController < ApplicationController
+end

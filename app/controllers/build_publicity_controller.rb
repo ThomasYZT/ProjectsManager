@@ -1,0 +1,2 @@
+class BuildPublicityController < ApplicationController
+end

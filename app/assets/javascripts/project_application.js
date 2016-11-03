@@ -1,5 +1,7 @@
 (function($){
-
+    $(".select2").select2({
+      allowClear: true
+    });
     $('.spin1 .btn:first-of-type').on('click', function() {
     	$('.spin1 input').val( parseInt($('.spin1 input').val(), 10) + 1);
 	  });
