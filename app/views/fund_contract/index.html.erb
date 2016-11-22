@@ -1,0 +1,149 @@
+<% content_for :header do %>
+  <p id="code" style="display:none"><%= session[:company_id]%></p>
+  <section class="content-header">
+    <div class="row">
+      <div class="col-xs-12">
+        <ol class="breadcrumb" style="font-size:medium;">
+          <li><a href="/dashboard"><i class="fa fa-dashboard"></i> 首页 </a></li>
+          <li class="active">申请公示</li>
+        </ol>
+      </div>
+    </div>
+  </section>
+<% end %>
+
+<% content_for :content do %>
+  <section class="content" style="margin-top:-25px;" >
+    <div class="col-md-12">
+      <div class="row">
+        <div class="box">
+          <div class="box-body">
+            <table class="table table-striped table-hover" id="tTrolleys">
+              <thead>
+                <tr style="border-bottom:1px solid gray;">
+                  <th>项目编号</th>
+                  <th>项目类型</th>
+                  <th>申请日期</th>
+                  <th></th>
+                </tr>
+              </thead>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div id="edit_publicity" class="modal fade in">
+    <div class="modal-dialog"  style="width:900px;">
+      <div class="box box-primary box-solid">
+        <div class="box-header ui-sortable-handle" style="cursor: move;">
+          <i class="ion ion-clipboard"></i>
+          <h3 class="box-title">项目补贴合同</h3>
+        </div>
+
+        <div class="box-body" style="width:900px;">
+          <!-- <img style="width:100%;height:700px; " src="/img/1.png">
+          <br>
+          <img style="width:100%;height:700px; " src="/img/11.png"> -->
+          <div class="col-md-12">
+            <div class="col-md-12" style="padding:0 5px 5px 0;border:1px dashed #3c8dbc;border-radius:5px;">
+              <div class="col-md-8" style="padding:0 0 0 10px;">
+                <h3 style="text-align: center;color: #3c8dbc;">甲方</h3>
+              </div>
+              <div class="col-md-4" style="padding:0 0 0 10px;">
+                <label for="exampleInputEmail1">市公司名称</label>
+                <input type="email" placeholder="填写市公司名称" style="border-radius:5px;" id="exampleInputEmail1" class="form-control">
+              </div>
+              <div class="col-md-4" style="padding:0 0 0 10px;">
+                <label for="exampleInputEmail1">分公司名称</label>
+                <input type="email" placeholder="填写分公司名称" style="border-radius:5px;" id="exampleInputEmail1" class="form-control">
+              </div>
+              <div class="col-md-4" style="padding:0 0 0 10px;">
+                <label for="exampleInputEmail1">住址</label>
+                <input type="email" placeholder="填写住址" style="border-radius:5px;" id="exampleInputEmail1" class="form-control">
+              </div>
+            </div>
+
+            <div class="col-md-12" style="padding:0 5px 5px 0;border:1px dashed #3c8dbc;border-radius:5px;">
+              <div class="col-md-8" style="padding:0 0 0 10px;">
+                <h3 style="text-align: center;color: #3c8dbc;">乙方</h3>
+              </div>
+              <div class="col-md-4" style="padding:0 0 0 10px;">
+                <label for="exampleInputEmail1">县名称</label>
+                <input type="email" placeholder="填写县名称" style="border-radius:5px;" id="exampleInputEmail1" class="form-control">
+              </div>
+              <div class="col-md-4" style="padding:0 0 0 10px;">
+                <label for="exampleInputEmail1">乡（镇）名称</label>
+                <input type="email" placeholder="填写乡（镇）名称" style="border-radius:5px;" id="exampleInputEmail1" class="form-control">
+              </div>
+              <div class="col-md-4" style="padding:0 0 0 10px;">
+                <label for="exampleInputEmail1">村名委员会</label>
+                <input type="email" placeholder="填写村名委员会" style="border-radius:5px;" id="exampleInputEmail1" class="form-control">
+              </div>
+              <div class="col-md-4" style="padding:0 0 0 10px;">
+                <label for="exampleInputEmail1">住址</label>
+                <input type="email" placeholder="填写住址" style="border-radius:5px;" id="exampleInputEmail1" class="form-control">
+              </div>
+            </div>
+            <hr style="border:1px dashed #000; height:1px">
+            <div class="col-md-12" style="padding:0 5px 5px 0;border:1px dashed #3c8dbc;border-radius:5px;">
+              <div class="col-md-4" style="padding:0 0 0 10px;">
+                <label for="exampleInputEmail1">项目名称</label>
+                <input type="email" placeholder="填写项目名称" style="border-radius:5px;" id="exampleInputEmail1" class="form-control">
+              </div>
+              <div class="col-md-4" style="padding:0 0 0 10px;">
+                <label for="exampleInputEmail1">建设地点</label>
+                <input type="email" placeholder="填写建设地点" style="border-radius:5px;" id="exampleInputEmail1" class="form-control">
+              </div>
+              <div class="col-md-4" style="padding:0 0 0 10px;">
+                <label for="exampleInputEmail1">建造标识</label>
+                <input type="email" placeholder="填写建造标识" style="border-radius:5px;" id="exampleInputEmail1" class="form-control">
+              </div>
+              <div class="col-md-4" style="padding:0 0 0 10px;">
+                <label for="exampleInputEmail1">受益基本烟田编号及面积</label>
+                <input type="email" placeholder="填写编号及面积" style="border-radius:5px;" id="exampleInputEmail1" class="form-control">
+              </div>
+              <div class="col-md-4" style="padding:0 0 0 10px;">
+                <label for="exampleInputEmail1">开工时间</label>
+                <input type="email" placeholder="填写开工时间" style="border-radius:5px;" id="exampleInputEmail1" class="form-control">
+              </div>
+              <div class="col-md-4" style="padding:0 0 0 10px;">
+                <label for="exampleInputEmail1">完工时间</label>
+                <input type="email" placeholder="填写完工时间" style="border-radius:5px;" id="exampleInputEmail1" class="form-control">
+              </div>
+              <div class="col-md-4" style="padding:0 0 0 10px;">
+                <label for="exampleInputEmail1">预计使用年限</label>
+                <input type="email" placeholder="填写使用年限" style="border-radius:5px;" id="exampleInputEmail1" class="form-control">
+              </div>
+              <div class="col-md-4" style="padding:0 0 0 10px;">
+                <label for="exampleInputEmail1">预算造价金额（元）</label>
+                <input type="email" placeholder="填写预算造价金额" style="border-radius:5px;" id="exampleInputEmail1" class="form-control">
+              </div>
+              <div class="col-md-4" style="padding:0 0 0 10px;">
+                <label for="exampleInputEmail1">甲方补贴金额比例</label>
+                <input type="email" placeholder="填写比例" style="border-radius:5px;" id="exampleInputEmail1" class="form-control">
+              </div>
+              <div class="col-md-4" style="padding:0 0 0 10px;">
+                <label for="exampleInputEmail1">甲方补贴金额</label>
+                <input type="email" placeholder="填写金额" style="border-radius:5px;" id="exampleInputEmail1" class="form-control">
+              </div>
+              <div class="col-md-4" style="padding:0 0 0 10px;">
+                <label for="exampleInputEmail1">预计使用年限</label>
+                <input type="email" placeholder="填写使用年限" style="border-radius:5px;" id="exampleInputEmail1" class="form-control">
+              </div>
+              <div class="col-md-4" style="padding:0 0 0 10px;">
+                <label for="exampleInputEmail1">预计使用年限</label>
+                <input type="email" placeholder="填写使用年限" style="border-radius:5px;" id="exampleInputEmail1" class="form-control">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="box-footer clearfix no-border">
+          <button class="btn btn-primary pull-right" style="margin-left:20px;" type="button">生成合同文档</button>
+          <button class="btn btn-success pull-right" type="button">提交</button>
+        </div>  
+      </div>  
+    </div>
+  </div>  
+<% end %>

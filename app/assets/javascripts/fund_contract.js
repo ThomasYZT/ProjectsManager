@@ -2,57 +2,39 @@
 	var data = [
 		{
 			item_code:"000001",
-			item_type:"烟水烟路",
-			total_cost:129381,
-			subsidy:62412,
+			item_type:"烟水烟路",			
 			apply_date:"2016-10-25",
-			statu:false,
-			status:"县级审核中"
+			input_status:true
 		},
 		{
 			item_code:"000002",
-			item_type:"密集烤房",
-			total_cost:129381,
-			subsidy:91231,
+			item_type:"密集烤房",			
 			apply_date:"2016-10-25",
-			statu:true,
-			status:"县级审核中"
+			input_status:false
 		},
 		{
 			item_code:"000003",
 			item_type:"育苗设施建设",
-			total_cost:874524,
-			subsidy:701237,
 			apply_date:"2016-10-25",
-			statu:true,
-			status:"县级审核不通过"
+			input_status:false
 		},
 		{
 			item_code:"000004",
-			item_type:"烟用机械",
-			total_cost:35234,
-			subsidy:35234,
+			item_type:"烟用机械",				
 			apply_date:"2016-10-25",
-			statu:true,
-			status:"县级审核通过"
+			input_status:false
 		},
 		{
 			item_code:"000005",
 			item_type:"土地整理",
-			total_cost:745734,
-			subsidy:745734,
 			apply_date:"2016-10-25",
-			statu:true,
-			status:"县级审核中"
+			input_status:false
 		},
 		{
 			item_code:"000006",
 			item_type:"烟水烟路",
-			total_cost:104742,
-			subsidy:104742,
 			apply_date:"2016-10-25",
-			statu:true,
-			status:"县级审核不通过"
+			input_status:false
 		}
 	];
 
@@ -72,18 +54,13 @@
           columns:[
             {data:'item_code'},
             {data:'item_type'},
-            {data:'total_cost'},
-            {data:'subsidy'},
             {data:'apply_date'},
-            {data:'statu',render:function(data,type,row,meta){
-            	if(row.statu == true){
-            		return '<button class="btn edit_publicity" style="color:#3c8dbc;border:1px solid #3c8dbc;padding:5px 5px;border-radius:5px;">填写建设公示</button><i class="fa fa-fw fa-exclamation-circle" style="color:#f39c12;"></i>'   
+            {data:'input_status',"sWidth":"150px",render:function(data,type,row,meta){
+            	if(row.input_status == false){
+            		return '<button class="btn edit_publicity" style="color:#3c8dbc;border:1px solid #3c8dbc;padding:5px 5px;border-radius:5px;">填写项目补贴合同</button><i class="fa fa-fw fa-exclamation-circle" style="color:#f39c12;"></i>'   
             	}else{
-            		return '<button class="btn disabled" style="color:gray;border:1px solid gray;padding:5px 5px;border-radius:5px;">填写建设公示</button>';
+            		return '<button class="btn disabled" style="color:gray;border:1px solid gray;padding:5px 5px;border-radius:5px;">填写项目补贴合同</button>';
             	}
-            }},
-            {data:'apply_date',sWidth:'100px',render:function(){
-            	return '<button class="btn btn-block btn-primary item_details" type="button">建设公示详情</button>'
             }}
           ]
       });
@@ -91,11 +68,7 @@
       $("#tTrolleys_filter").find("input").wrap('<div class="box-tools"><div class="input-group input-group-sm" style="width:150px;"></div></div>');
       $("#tTrolleys_filter").find(".input-group").append('<div class="input-group-btn"><button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button></div>');
 
-      $(".item_details").click(function(){
-      	$("#infoModal").modal('toggle')
-      })
-
       $(".edit_publicity").click(function(){
-      	$("#editModal").modal('toggle')
+      	$("#edit_publicity").modal('toggle');
       })
 })(jQuery)

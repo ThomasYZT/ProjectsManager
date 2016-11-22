@@ -90,7 +90,15 @@
                     
                   </ul>
                 </li>
-                <li><a href="#">进度管理</a></li>
+                <li class="dropdown">
+                  <a data-toggle="dropdown" class="dropdown-toggle" href="/dynamic_management">过程管理 <span class="caret"></span></a>
+                  <ul role="menu" class="dropdown-menu">
+                    <li><a href="/project_search">变更</a></li>
+                    <li><a href="/project_search">签证</a></li>
+                    <li><a href="/project_search">验收</a></li>
+                    <li><a href="/project_search">年度计划变更</a></li>
+                  </ul>
+                </li>
                 <li class="dropdown">
                   <a data-toggle="dropdown" class="dropdown-toggle" href="/dynamic_management">档案管理 <span class="caret"></span></a>
                   <ul role="menu" class="dropdown-menu">
@@ -140,16 +148,15 @@
         <%= yield :content %>
 
       </div>
-
+      
       <footer class="main-footer">
         <div class="pull-right hidden-xs">
           <b>版本</b> 1.0.0
         </div>
         <strong>Copyright © 2014-2015 <a href="http://almsaeedstudio.com">瑞和科技</a></strong> 版权所有.
       </footer>
-
     </div>
-
+    
     <script src="/js/jquery-1.11.3.min.js"></script>
     <script src="http://apps.bdimg.com/libs/angular.js/1.4.6/angular.min.js"></script>
     <script src="/js/bootstrap.min.js"></script>
@@ -175,27 +182,29 @@
           $(".project_management").append('<li><p style="padding-left:20px;">项目申请</p></li>'+                              '<li class="divider"></li>'+
                                           '<li><a href="/project_application">申请书</a></li>'+
                                           '<li><a href="/publicity">申请公示</a></li>'+
-                                          '<li><a href="/county_check">县级审核</a></li>'+
+                                          '<li><a href="/county_check">县级审核</a></li>'+/*
                                           '<li><a href="/choose_point">选点</a></li>'+
-                                          '<li><a href="/design">规划设计</a></li>'+
+                                          '<li><a href="/design">规划设计</a></li>'+*/
                                           '<li class="divider"></li>'+
                                           '<li><p style="padding-left:20px;">立项审批</p></li>'+
                                           '<li class="divider"></li>'+
-                                          '<li><a href="/plan_reported">上报计划</a></li>'+
-                                          '<li><a href="province_respond">计划批复</a></li>'+
+                                          '<li><a href="/plan_reported">市级上报计划</a></li>'+
+                                          '<li><a href="/city_order">市级计划下达</a></li>'+
+                                          '<li><a href="/province_respond">省级计划批复</a></li>'+
+                                          '<li><a href="/province_order">省级计划下达</a></li>'+
                                           '<li><a href="build_publicity">建设公示</a></li>'+
                                           '<li class="divider"></li>'+
                                           '<li><p style="padding-left:20px;">合同管理</p></li>'+
                                           '<li class="divider"></li>'+
-                                          '<li><a href="/project_search">签订补贴合同</a></li>'+
-                                          '<li><a href="/project_search">签订施工合同</a></li>'+
-                                          '<li class="divider"></li>'+
-                                          '<li><p style="padding-left:20px;">过程管理</p></li>'+
-                                          '<li class="divider"></li>'+
-                                          '<li><a href="/project_search">成立项目</a></li>'+
-                                          '<li><a href="/project_search">变更</a></li>'+
-                                          '<li><a href="/project_search">签证</a></li>'+
-                                          '<li><a href="/project_search">验收</a></li>');
+                                          '<li><a href="/fund_contract">相关授权委托书上传</a></li>'+
+                                          '<li><a href="/fund_contract">签订补贴合同</a></li>'+
+                                          '<li><a href="/project_search">成立项目组</a></li>'+
+                                          '<li><a href="/construct_contract">施工合同</a></li>'+
+                                          '<li><a href="/project_search">补贴资金兑现公示</a></li>'+
+                                          '<li><a href="/project_search">项目移交</a></li>'+
+                                          '<li><a href="/project_search">运行管护</a></li>'
+                                          
+                                          );
         }else if($("#code").text().length == 6){
           $(".project_management").append('<li><a href="/project_apply">项目审核</a></li>'+
                                           '<li class="divider"></li>'+

@@ -1,0 +1,2 @@
+class FundContractController < ApplicationController
+end

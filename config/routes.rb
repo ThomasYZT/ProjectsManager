@@ -14,6 +14,10 @@ Rails.application.routes.draw do
   resources :county_check
   resources :province_respond
   resources :build_publicity
+  resources :province_order
+  resources :city_order
+  resources :fund_contract
+  resources :construct_contract
   controller :sessions do
     post 'login' => :create
     delete 'logout' => :destroy

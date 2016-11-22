@@ -15,8 +15,29 @@
 <% content_for :content do %>
   <section class="content" style="margin-top:-25px;" >
     <div class="col-md-12">
-      <div class="row">
-        <div class="box">
+      <div class="col-md-2">
+        <div class="box box-solid">
+          <div class="box-header with-border">
+            <h3 class="box-title">村</h3>
+          </div>
+          <div class="box-body no-padding">
+            <ul class="nav nav-pills nav-stacked list">
+              <li class="active"><a href="#" class="count">一号村</a></li>
+              <li><a href="#" class="count 1">二号村</a></li>
+              <li><a href="#" class="count 2">三号村</a></li>
+              <li><a href="#" class="count 3">四号村</a></li>
+              <li><a href="#" class="count 4">五号村</a></li>
+            </ul>
+          </div>
+          <!-- /.box-body -->
+        </div>
+      </div>
+
+      <div class="col-md-10" style="padding-left:0">
+        <div class="box box-widget">
+          <div class="box-title">
+            <div style="margin: 0 auto;width: 200px;"><h4 style="margin:0 0;padding-top:30px;width: 200px;text-align: center">一号村项目申报统计</h4></div>
+          </div>
           <div class="box-body">
             <table class="table table-striped table-hover" id="tTrolleys">
               <thead>
@@ -28,6 +49,100 @@
                   <th>申请日期</th>
                   <th>状态</th>
                   <th></th>
+                  <th></th>
+                  <th></th>
+                </tr>
+              </thead>
+            </table>
+          </div>
+        </div>
+
+        <div class="box box-widget" style="display: none;">
+          <div class="box-title">
+            <div style="margin: 0 auto;width: 200px;"><h4 style="margin:0 0;padding-top:30px;width: 200px;text-align: center">二号村项目申报统计</h4></div>
+          </div>
+          <div class="box-body">
+            <table class="table table-striped table-hover" id="tTrolleys1">
+              <thead>
+                <tr style="border-bottom:1px solid gray;">
+                  <th>项目编号</th>
+                  <th>项目类型</th>
+                  <th>总金额</th>
+                  <th>补贴金额</th>
+                  <th>申请日期</th>
+                  <th>状态</th>
+                  <th></th>
+                  <th></th>
+                  <th></th>
+                </tr>
+              </thead>
+            </table>
+          </div>
+        </div>
+
+        <div class="box box-widget" style="display: none;">
+          <div class="box-title">
+            <div style="margin: 0 auto;width: 200px;"><h4 style="margin:0 0;padding-top:30px;width: 200px;text-align: center">三号村项目申报统计</h4></div>
+          </div>
+          <div class="box-body">
+            <table class="table table-striped table-hover" id="tTrolleys2">
+              <thead>
+                <tr style="border-bottom:1px solid gray;">
+                  <th>项目编号</th>
+                  <th>项目类型</th>
+                  <th>总金额</th>
+                  <th>补贴金额</th>
+                  <th>申请日期</th>
+                  <th>状态</th>
+                  <th></th>
+                  <th></th>
+                  <th></th>
+                </tr>
+              </thead>
+            </table>
+          </div>
+        </div>
+
+        <div class="box box-widget" style="display: none;">
+          <div class="box-title">
+            <div style="margin: 0 auto;width: 200px;"><h4 style="margin:0 0;padding-top:30px;width: 200px;text-align: center">四号村项目申报统计</h4></div>
+          </div>
+          <div class="box-body">
+            <table class="table table-striped table-hover" id="tTrolleys3">
+              <thead>
+                <tr style="border-bottom:1px solid gray;">
+                  <th>项目编号</th>
+                  <th>项目类型</th>
+                  <th>总金额</th>
+                  <th>补贴金额</th>
+                  <th>申请日期</th>
+                  <th>状态</th>
+                  <th></th>
+                  <th></th>
+                  <th></th>
+                </tr>
+              </thead>
+            </table>
+          </div>
+        </div>
+
+        <div class="box box-widget" style="display: none;">
+          <div class="box-title">
+            <div style="margin: 0 auto;width: 200px;"><h4 style="margin:0 0;padding-top:30px;width: 200px;text-align: center">五号村项目申报统计</h4></div>
+          </div>
+          <div class="box-body">
+            <table class="table table-striped table-hover" id="tTrolleys4">
+              <thead>
+                <tr style="border-bottom:1px solid gray;">
+                  <th>项目编号</th>
+                  <th>项目类型</th>
+                  <th>总金额</th>
+                  <th>补贴金额</th>
+                  <th>申请日期</th>
+                  <th>状态</th>
+                  <th></th>
+                  <th></th>
+                  <th></th>
                 </tr>
               </thead>
             </table>
@@ -36,8 +151,324 @@
       </div>
     </div>
   </section>
+  
+  <div id="edit_publicity" class="modal fade in">
+    <div class="modal-dialog">
+      <div class="box box-primary box-solid">
+          <div class="box-header ui-sortable-handle" style="cursor: move;">
+            <i class="ion ion-clipboard"></i>
 
-  <div class="modal fade in">
+            <h3 class="box-title">申请公示材料信息</h3>
+          </div>
+          <!-- /.box-header -->
+          <div class="box-body">
+            <div class="col-md-3" style="padding:5px 5px;border:1px dashed #3c8dbc;border-radius:5px;">
+              <div class="col-md-12" style="padding:0 0;">
+                <label for="exampleInputEmail1">县名称</label>
+                <input type="email" placeholder="填写县名称" style="border-radius:5px;" id="exampleInputEmail1" class="form-control">
+                <label for="exampleInputEmail1">乡(镇)名称</label>
+                <input type="email" placeholder="填写乡(镇)名称" style="border-radius:5px;" id="exampleInputEmail1" class="form-control">
+                <label for="exampleInputEmail1">村名称</label>
+                <input type="email" placeholder="填写村名称" style="border-radius:5px;" id="exampleInputEmail1" class="form-control">
+                <label for="exampleInputEmail1">村名小组名称</label>
+                <input type="email" placeholder="填写小组名称" style="border-radius:5px;" id="exampleInputEmail1" class="form-control">
+                <label for="exampleInputEmail1">年度</label>
+                <input type="email" placeholder="填写年度" style="border-radius:5px;" id="exampleInputEmail1" class="form-control">
+                <label for="exampleInputEmail1">项目区名称</label>
+                <input type="email" placeholder="填写项目区名称" style="border-radius:5px;" id="exampleInputEmail1" class="form-control">
+                <label for="exampleInputEmail1">年份</label>
+                <input type="email" placeholder="请填写年份" style="border-radius:5px;" id="exampleInputEmail1" class="form-control">
+                <label for="exampleInputEmail1">月份</label>
+                <input type="email" placeholder="请填写月份" style="border-radius:5px;" id="exampleInputEmail1" class="form-control">
+                <label for="exampleInputEmail1">日期</label>
+                <input type="email" placeholder="请填写日期" style="border-radius:5px;" id="exampleInputEmail1" class="form-control">
+                
+              </div>
+            </div>
+            <div class="col-md-9" style="padding:0 0 0 0px;">
+              <div class="col-md-12" style="padding:0 5px 5px 0;border:1px dashed #3c8dbc;border-radius:5px;">
+                <div class="col-md-8" style="padding:0 0 0 10px;">
+                  <h3 style="text-align: center;color: #3c8dbc;">水池项目</h3>
+                </div>
+                <div class="col-md-4" style="padding:0 0 0 10px;">
+                  <label for="exampleInputEmail1">个数</label>
+                  <input type="email" placeholder="填写水池个数" style="border-radius:5px;" id="exampleInputEmail1" class="form-control">
+                </div>
+                <div class="col-md-4" style="padding:0 0 0 10px;">
+                  <label for="exampleInputEmail1">立方米数</label>
+                  <input type="email" placeholder="填写立方米数" style="border-radius:5px;" id="exampleInputEmail1" class="form-control">
+                </div>
+                <div class="col-md-4" style="padding:0 0 0 10px;">
+                  <label for="exampleInputEmail1">项目编号</label>
+                  <input type="email" placeholder="填写项目编号" style="border-radius:5px;" id="exampleInputEmail1" class="form-control">
+                </div>
+                <div class="col-md-4" style="padding:0 0 0 10px;">
+                  <label for="exampleInputEmail1">烟草补贴资金</label>
+                  <input type="email" placeholder="填写烟草补贴资金" style="border-radius:5px;" id="exampleInputEmail1" class="form-control">
+                </div>
+                <div class="col-md-4" style="padding:0 0 0 10px;">
+                  <label for="exampleInputEmail1">其他部门资金</label>
+                  <input type="email" placeholder="填写烟草补贴资金" style="border-radius:5px;" id="exampleInputEmail1" class="form-control">
+                </div>
+                <div class="col-md-4" style="padding:0 0 0 10px;">
+                  <label for="exampleInputEmail1">烟农自筹资金</label>
+                  <input type="email" placeholder="填写烟农自筹资金" style="border-radius:5px;" id="exampleInputEmail1" class="form-control">
+                </div>
+                <div class="col-md-4" style="padding:0 0 0 10px;">
+                  <label for="exampleInputEmail1">受益面积</label>
+                  <input type="email" placeholder="填写受益面积" style="border-radius:5px;" id="exampleInputEmail1" class="form-control">
+                </div>
+              </div>
+              <div class="col-md-12" style="padding:0 5px 5px 0;border:1px dashed #3c8dbc;border-radius:5px;">
+                <div class="col-md-8" style="padding:0 0 0 10px;">
+                  <h3 style="text-align: center;color: #3c8dbc;">水窖项目</h3>
+                </div>
+                <div class="col-md-4" style="padding:0 0 0 10px;">
+                  <label for="exampleInputEmail1">水窖个数</label>
+                  <input type="email" placeholder="请填写乡(镇)名称" style="border-radius:5px;" id="exampleInputEmail1" class="form-control">
+                </div>
+                <div class="col-md-4" style="padding:0 0 0 10px;">
+                  <label for="exampleInputEmail1">立方米数</label>
+                  <input type="email" placeholder="填写立方米数" style="border-radius:5px;" id="exampleInputEmail1" class="form-control">
+                </div>
+                <div class="col-md-4" style="padding:0 0 0 10px;">
+                  <label for="exampleInputEmail1">项目编号</label>
+                  <input type="email" placeholder="填写项目编号" style="border-radius:5px;" id="exampleInputEmail1" class="form-control">
+                </div>
+                <div class="col-md-4" style="padding:0 0 0 10px;">
+                  <label for="exampleInputEmail1">烟草补贴资金</label>
+                  <input type="email" placeholder="填写烟草补贴资金" style="border-radius:5px;" id="exampleInputEmail1" class="form-control">
+                </div>
+                <div class="col-md-4" style="padding:0 0 0 10px;">
+                  <label for="exampleInputEmail1">其他部门资金</label>
+                  <input type="email" placeholder="填写烟草补贴资金" style="border-radius:5px;" id="exampleInputEmail1" class="form-control">
+                </div>
+                <div class="col-md-4" style="padding:0 0 0 10px;">
+                  <label for="exampleInputEmail1">烟农自筹资金</label>
+                  <input type="email" placeholder="填写烟农自筹资金" style="border-radius:5px;" id="exampleInputEmail1" class="form-control">
+                </div>
+                <div class="col-md-4" style="padding:0 0 0 10px;">
+                  <label for="exampleInputEmail1">受益面积</label>
+                  <input type="email" placeholder="填写受益面积" style="border-radius:5px;" id="exampleInputEmail1" class="form-control">
+                </div>
+              </div>
+              <div class="col-md-12" style="padding:0 5px 5px 0;border:1px dashed #3c8dbc;border-radius:5px;">
+                <div class="col-md-8" style="padding:0 0 0 10px;">
+                  <h3 style="text-align: center;color: #3c8dbc;">机水井项目</h3>
+                </div>
+                <div class="col-md-4" style="padding:0 0 0 10px;">
+                  <label for="exampleInputEmail1">机水井个数</label>
+                  <input type="email" placeholder="填写机水井个数" style="border-radius:5px;" id="exampleInputEmail1" class="form-control">
+                </div>
+                <div class="col-md-4" style="padding:0 0 0 10px;">
+                  <label for="exampleInputEmail1">投资金额</label>
+                  <input type="email" placeholder="填写投资金额" style="border-radius:5px;" id="exampleInputEmail1" class="form-control">
+                </div>
+                <div class="col-md-4" style="padding:0 0 0 10px;">
+                  <label for="exampleInputEmail1">项目编号</label>
+                  <input type="email" placeholder="填写项目编号" style="border-radius:5px;" id="exampleInputEmail1" class="form-control">
+                </div>
+                <div class="col-md-4" style="padding:0 0 0 10px;">
+                  <label for="exampleInputEmail1">烟草补贴资金</label>
+                  <input type="email" placeholder="填写烟草补贴资金" style="border-radius:5px;" id="exampleInputEmail1" class="form-control">
+                </div>
+                <div class="col-md-4" style="padding:0 0 0 10px;">
+                  <label for="exampleInputEmail1">其他部门资金</label>
+                  <input type="email" placeholder="填写烟草补贴资金" style="border-radius:5px;" id="exampleInputEmail1" class="form-control">
+                </div>
+                <div class="col-md-4" style="padding:0 0 0 10px;">
+                  <label for="exampleInputEmail1">烟农自筹资金</label>
+                  <input type="email" placeholder="填写烟农自筹资金" style="border-radius:5px;" id="exampleInputEmail1" class="form-control">
+                </div>
+                <div class="col-md-4" style="padding:0 0 0 10px;">
+                  <label for="exampleInputEmail1">受益面积</label>
+                  <input type="email" placeholder="填写受益面积" style="border-radius:5px;" id="exampleInputEmail1" class="form-control">
+                </div>
+              </div>
+              <div class="col-md-12" style="padding:0 5px 5px 0;border:1px dashed #3c8dbc;border-radius:5px;">
+                <div class="col-md-8" style="padding:0 0 0 10px;">
+                  <h3 style="text-align: center;color: #3c8dbc;">沟渠项目</h3>
+                </div>
+                <div class="col-md-4" style="padding:0 0 0 10px;">
+                <label for="exampleInputEmail1">沟渠条数</label>
+                <input type="email" placeholder="填写沟渠条数" style="border-radius:5px;" id="exampleInputEmail1" class="form-control">
+              </div>
+              <div class="col-md-4" style="padding:0 0 0 10px;">
+                <label for="exampleInputEmail1">公里数</label>
+                <input type="email" placeholder="填写公里数" style="border-radius:5px;" id="exampleInputEmail1" class="form-control">
+              </div>
+                <div class="col-md-4" style="padding:0 0 0 10px;">
+                  <label for="exampleInputEmail1">项目编号</label>
+                  <input type="email" placeholder="填写项目编号" style="border-radius:5px;" id="exampleInputEmail1" class="form-control">
+                </div>
+                <div class="col-md-4" style="padding:0 0 0 10px;">
+                  <label for="exampleInputEmail1">烟草补贴资金</label>
+                  <input type="email" placeholder="填写烟草补贴资金" style="border-radius:5px;" id="exampleInputEmail1" class="form-control">
+                </div>
+                <div class="col-md-4" style="padding:0 0 0 10px;">
+                  <label for="exampleInputEmail1">其他部门资金</label>
+                  <input type="email" placeholder="填写烟草补贴资金" style="border-radius:5px;" id="exampleInputEmail1" class="form-control">
+                </div>
+                <div class="col-md-4" style="padding:0 0 0 10px;">
+                  <label for="exampleInputEmail1">烟农自筹资金</label>
+                  <input type="email" placeholder="填写烟农自筹资金" style="border-radius:5px;" id="exampleInputEmail1" class="form-control">
+                </div>
+                <div class="col-md-4" style="padding:0 0 0 10px;">
+                  <label for="exampleInputEmail1">受益面积</label>
+                  <input type="email" placeholder="填写受益面积" style="border-radius:5px;" id="exampleInputEmail1" class="form-control">
+                </div>
+              </div>
+
+              <div class="col-md-12" style="padding:0 5px 5px 0;border:1px dashed #3c8dbc;border-radius:5px;">
+                <div class="col-md-8" style="padding:0 0 0 10px;">
+                  <h3 style="text-align: center;color: #3c8dbc;">塘垻项目</h3>
+                </div>
+                <div class="col-md-4" style="padding:0 0 0 10px;">
+                <label for="exampleInputEmail1">塘垻处数</label>
+                <input type="email" placeholder="填写塘垻处数" style="border-radius:5px;" id="exampleInputEmail1" class="form-control">
+              </div>
+              <div class="col-md-4" style="padding:0 0 0 10px;">
+                <label for="exampleInputEmail1">投资金额</label>
+                <input type="email" placeholder="填写投资金额" style="border-radius:5px;" id="exampleInputEmail1" class="form-control">
+              </div>
+                <div class="col-md-4" style="padding:0 0 0 10px;">
+                  <label for="exampleInputEmail1">项目编号</label>
+                  <input type="email" placeholder="填写项目编号" style="border-radius:5px;" id="exampleInputEmail1" class="form-control">
+                </div>
+                <div class="col-md-4" style="padding:0 0 0 10px;">
+                  <label for="exampleInputEmail1">烟草补贴资金</label>
+                  <input type="email" placeholder="填写烟草补贴资金" style="border-radius:5px;" id="exampleInputEmail1" class="form-control">
+                </div>
+                <div class="col-md-4" style="padding:0 0 0 10px;">
+                  <label for="exampleInputEmail1">其他部门资金</label>
+                  <input type="email" placeholder="填写烟草补贴资金" style="border-radius:5px;" id="exampleInputEmail1" class="form-control">
+                </div>
+                <div class="col-md-4" style="padding:0 0 0 10px;">
+                  <label for="exampleInputEmail1">烟农自筹资金</label>
+                  <input type="email" placeholder="填写烟农自筹资金" style="border-radius:5px;" id="exampleInputEmail1" class="form-control">
+                </div>
+                <div class="col-md-4" style="padding:0 0 0 10px;">
+                  <label for="exampleInputEmail1">受益面积</label>
+                  <input type="email" placeholder="填写受益面积" style="border-radius:5px;" id="exampleInputEmail1" class="form-control">
+                </div>
+              </div>
+
+              <div class="col-md-12" style="padding:0 5px 5px 0;border:1px dashed #3c8dbc;border-radius:5px;">
+                <div class="col-md-8" style="padding:0 0 0 10px;">
+                  <h3 style="text-align: center;color: #3c8dbc;">管网项目</h3>
+                </div>
+                <div class="col-md-4" style="padding:0 0 0 10px;">
+                <label for="exampleInputEmail1">管网处数</label>
+                <input type="email" placeholder="填写管网处数" style="border-radius:5px;" id="exampleInputEmail1" class="form-control">
+              </div>
+              <div class="col-md-4" style="padding:0 0 0 10px;">
+                <label for="exampleInputEmail1">公里数</label>
+                <input type="email" placeholder="填写公里数" style="border-radius:5px;" id="exampleInputEmail1" class="form-control">
+              </div>
+                <div class="col-md-4" style="padding:0 0 0 10px;">
+                  <label for="exampleInputEmail1">项目编号</label>
+                  <input type="email" placeholder="填写项目编号" style="border-radius:5px;" id="exampleInputEmail1" class="form-control">
+                </div>
+                <div class="col-md-4" style="padding:0 0 0 10px;">
+                  <label for="exampleInputEmail1">烟草补贴资金</label>
+                  <input type="email" placeholder="填写烟草补贴资金" style="border-radius:5px;" id="exampleInputEmail1" class="form-control">
+                </div>
+                <div class="col-md-4" style="padding:0 0 0 10px;">
+                  <label for="exampleInputEmail1">其他部门资金</label>
+                  <input type="email" placeholder="填写烟草补贴资金" style="border-radius:5px;" id="exampleInputEmail1" class="form-control">
+                </div>
+                <div class="col-md-4" style="padding:0 0 0 10px;">
+                  <label for="exampleInputEmail1">烟农自筹资金</label>
+                  <input type="email" placeholder="填写烟农自筹资金" style="border-radius:5px;" id="exampleInputEmail1" class="form-control">
+                </div>
+                <div class="col-md-4" style="padding:0 0 0 10px;">
+                  <label for="exampleInputEmail1">受益面积</label>
+                  <input type="email" placeholder="填写受益面积" style="border-radius:5px;" id="exampleInputEmail1" class="form-control">
+                </div>
+              </div>
+              
+              <div class="col-md-12" style="padding:0 5px 5px 0;border:1px dashed #3c8dbc;border-radius:5px;">
+                <div class="col-md-8" style="padding:0 0 0 10px;">
+                  <h3 style="text-align: center;color: #3c8dbc;">堤灌站项目</h3>
+                </div>
+                <div class="col-md-4" style="padding:0 0 0 10px;">
+                <label for="exampleInputEmail1">堤灌站个数</label>
+                <input type="email" placeholder="填写堤灌站个数" style="border-radius:5px;" id="exampleInputEmail1" class="form-control">
+              </div>
+              <div class="col-md-4" style="padding:0 0 0 10px;">
+                <label for="exampleInputEmail1">投资金额</label>
+                <input type="email" placeholder="填写投资金额" style="border-radius:5px;" id="exampleInputEmail1" class="form-control">
+              </div>
+                <div class="col-md-4" style="padding:0 0 0 10px;">
+                  <label for="exampleInputEmail1">项目编号</label>
+                  <input type="email" placeholder="填写项目编号" style="border-radius:5px;" id="exampleInputEmail1" class="form-control">
+                </div>
+                <div class="col-md-4" style="padding:0 0 0 10px;">
+                  <label for="exampleInputEmail1">烟草补贴资金</label>
+                  <input type="email" placeholder="填写烟草补贴资金" style="border-radius:5px;" id="exampleInputEmail1" class="form-control">
+                </div>
+                <div class="col-md-4" style="padding:0 0 0 10px;">
+                  <label for="exampleInputEmail1">其他部门资金</label>
+                  <input type="email" placeholder="填写烟草补贴资金" style="border-radius:5px;" id="exampleInputEmail1" class="form-control">
+                </div>
+                <div class="col-md-4" style="padding:0 0 0 10px;">
+                  <label for="exampleInputEmail1">烟农自筹资金</label>
+                  <input type="email" placeholder="填写烟农自筹资金" style="border-radius:5px;" id="exampleInputEmail1" class="form-control">
+                </div>
+                <div class="col-md-4" style="padding:0 0 0 10px;">
+                  <label for="exampleInputEmail1">受益面积</label>
+                  <input type="email" placeholder="填写受益面积" style="border-radius:5px;" id="exampleInputEmail1" class="form-control">
+                </div>
+              </div>
+              
+              <div class="col-md-12" style="padding:0 5px 5px 0;border:1px dashed #3c8dbc;border-radius:5px;">
+                <div class="col-md-8" style="padding:0 0 0 10px;">
+                  <h3 style="text-align: center;color: #3c8dbc;">机耕道路项目</h3>
+                </div>
+                <div class="col-md-4" style="padding:0 0 0 10px;">
+                <label for="exampleInputEmail1">机耕道路条数</label>
+                <input type="email" placeholder="填写机耕道路条数" style="border-radius:5px;" id="exampleInputEmail1" class="form-control">
+              </div>
+              <div class="col-md-4" style="padding:0 0 0 10px;">
+                <label for="exampleInputEmail1">公里数</label>
+                <input type="email" placeholder="填写公里数" style="border-radius:5px;" id="exampleInputEmail1" class="form-control">
+              </div>
+                <div class="col-md-4" style="padding:0 0 0 10px;">
+                  <label for="exampleInputEmail1">项目编号</label>
+                  <input type="email" placeholder="填写项目编号" style="border-radius:5px;" id="exampleInputEmail1" class="form-control">
+                </div>
+                <div class="col-md-4" style="padding:0 0 0 10px;">
+                  <label for="exampleInputEmail1">烟草补贴资金</label>
+                  <input type="email" placeholder="填写烟草补贴资金" style="border-radius:5px;" id="exampleInputEmail1" class="form-control">
+                </div>
+                <div class="col-md-4" style="padding:0 0 0 10px;">
+                  <label for="exampleInputEmail1">其他部门资金</label>
+                  <input type="email" placeholder="填写烟草补贴资金" style="border-radius:5px;" id="exampleInputEmail1" class="form-control">
+                </div>
+                <div class="col-md-4" style="padding:0 0 0 10px;">
+                  <label for="exampleInputEmail1">烟农自筹资金</label>
+                  <input type="email" placeholder="填写烟农自筹资金" style="border-radius:5px;" id="exampleInputEmail1" class="form-control">
+                </div>
+                <div class="col-md-4" style="padding:0 0 0 10px;">
+                  <label for="exampleInputEmail1">受益面积</label>
+                  <input type="email" placeholder="填写受益面积" style="border-radius:5px;" id="exampleInputEmail1" class="form-control">
+                </div>
+              </div>
+              
+            </div>
+          </div>
+          <!-- /.box-body -->
+          <div class="box-footer clearfix no-border">
+            <button class="btn btn-primary pull-right" style="margin-left:20px;" type="button">生成公示文档</button>
+            <button class="btn btn-success pull-right" type="button">提交</button>
+          </div>
+        </div>
+      <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+  </div>
+
+  <div id="infoModal" class="modal fade in">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">

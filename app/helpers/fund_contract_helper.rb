@@ -1,0 +1,2 @@
+module FundContractHelper
+end
