@@ -80,13 +80,13 @@
             }},
             {data:'statu',render:function(data,type,row,meta){
             	if(row.statu == true){
-            		return '<button class="btn edit_publicity" style="color:#3c8dbc;border:1px solid #3c8dbc;padding:5px 5px;border-radius:5px;">填写建设公示</button><i class="fa fa-fw fa-exclamation-circle" style="color:#f39c12;"></i>'   
+            		return '<button class="btn edit_publicity" style="color:#3c8dbc;border:1px solid #3c8dbc;padding:5px 5px;border-radius:5px;">填写补贴资金信息</button><i class="fa fa-fw fa-exclamation-circle" style="color:#f39c12;"></i>'   
             	}else{
-            		return '<button class="btn disabled" style="color:gray;border:1px solid gray;padding:5px 5px;border-radius:5px;">填写建设公示</button>';
+            		return '<button class="btn disabled" style="color:gray;border:1px solid gray;padding:5px 5px;border-radius:5px;">填写补贴资金信息</button>';
             	}
             }},
-            {data:'apply_date',sWidth:'100px',render:function(){
-            	return '<button class="btn btn-block btn-primary item_details" type="button">建设公示详情</button>'
+            {data:'apply_date',sWidth:'150px',render:function(){
+            	return '<button class="btn btn-block btn-primary item_details" type="button">补贴资金信息详情</button>'
             }}
           ]
       });
@@ -115,13 +115,13 @@
             }},
             {data:'statu',render:function(data,type,row,meta){
             	if(row.statu == true){
-            		return '<button class="btn edit_publicity" style="color:#3c8dbc;border:1px solid #3c8dbc;padding:5px 5px;border-radius:5px;">填写建设公示</button><i class="fa fa-fw fa-exclamation-circle" style="color:#f39c12;"></i>'   
+            		return '<button class="btn edit_publicity" style="color:#3c8dbc;border:1px solid #3c8dbc;padding:5px 5px;border-radius:5px;">填写补贴资金信息</button><i class="fa fa-fw fa-exclamation-circle" style="color:#f39c12;"></i>'   
             	}else{
-            		return '<button class="btn disabled" style="color:gray;border:1px solid gray;padding:5px 5px;border-radius:5px;">填写建设公示</button>';
+            		return '<button class="btn disabled" style="color:gray;border:1px solid gray;padding:5px 5px;border-radius:5px;">填写补贴资金信息</button>';
             	}
             }},
-            {data:'apply_date',sWidth:'100px',render:function(){
-            	return '<button class="btn btn-block btn-primary item_details" type="button">建设公示详情</button>'
+            {data:'apply_date',sWidth:'150px',render:function(){
+            	return '<button class="btn btn-block btn-primary item_details" type="button">补贴资金信息详情</button>'
             }}
           ]
       });
@@ -150,13 +150,13 @@
             }},
             {data:'statu',render:function(data,type,row,meta){
             	if(row.statu == true){
-            		return '<button class="btn edit_publicity" style="color:#3c8dbc;border:1px solid #3c8dbc;padding:5px 5px;border-radius:5px;">填写建设公示</button><i class="fa fa-fw fa-exclamation-circle" style="color:#f39c12;"></i>'   
+            		return '<button class="btn edit_publicity" style="color:#3c8dbc;border:1px solid #3c8dbc;padding:5px 5px;border-radius:5px;">填写补贴资金信息</button><i class="fa fa-fw fa-exclamation-circle" style="color:#f39c12;"></i>'   
             	}else{
-            		return '<button class="btn disabled" style="color:gray;border:1px solid gray;padding:5px 5px;border-radius:5px;">填写建设公示</button>';
+            		return '<button class="btn disabled" style="color:gray;border:1px solid gray;padding:5px 5px;border-radius:5px;">填写补贴资金信息</button>';
             	}
             }},
-            {data:'apply_date',sWidth:'100px',render:function(){
-            	return '<button class="btn btn-block btn-primary item_details" type="button">建设公示详情</button>'
+            {data:'apply_date',sWidth:'150px',render:function(){
+            	return '<button class="btn btn-block btn-primary item_details" type="button">补贴资金信息详情</button>'
             }}
           ]
       });
@@ -185,13 +185,13 @@
             }},
             {data:'statu',render:function(data,type,row,meta){
             	if(row.statu == true){
-            		return '<button class="btn edit_publicity" style="color:#3c8dbc;border:1px solid #3c8dbc;padding:5px 5px;border-radius:5px;">填写建设公示</button><i class="fa fa-fw fa-exclamation-circle" style="color:#f39c12;"></i>'   
+            		return '<button class="btn edit_publicity" style="color:#3c8dbc;border:1px solid #3c8dbc;padding:5px 5px;border-radius:5px;">填写补贴资金信息</button><i class="fa fa-fw fa-exclamation-circle" style="color:#f39c12;"></i>'   
             	}else{
-            		return '<button class="btn disabled" style="color:gray;border:1px solid gray;padding:5px 5px;border-radius:5px;">填写建设公示</button>';
+            		return '<button class="btn disabled" style="color:gray;border:1px solid gray;padding:5px 5px;border-radius:5px;">填写补贴资金信息</button>';
             	}
             }},
-            {data:'apply_date',sWidth:'100px',render:function(){
-            	return '<button class="btn btn-block btn-primary item_details" type="button">建设公示详情</button>'
+            {data:'apply_date',sWidth:'150px',render:function(){
+            	return '<button class="btn btn-block btn-primary item_details" type="button">补贴资金信息详情</button>'
             }}
           ]
       });
@@ -220,13 +220,13 @@
             }},
             {data:'statu',render:function(data,type,row,meta){
             	if(row.statu == true){
-            		return '<button class="btn edit_publicity" style="color:#3c8dbc;border:1px solid #3c8dbc;padding:5px 5px;border-radius:5px;">填写建设公示</button><i class="fa fa-fw fa-exclamation-circle" style="color:#f39c12;"></i>'   
+            		return '<button class="btn edit_publicity" style="color:#3c8dbc;border:1px solid #3c8dbc;padding:5px 5px;border-radius:5px;">填写补贴资金信息</button><i class="fa fa-fw fa-exclamation-circle" style="color:#f39c12;"></i>'   
             	}else{
-            		return '<button class="btn disabled" style="color:gray;border:1px solid gray;padding:5px 5px;border-radius:5px;">填写建设公示</button>';
+            		return '<button class="btn disabled" style="color:gray;border:1px solid gray;padding:5px 5px;border-radius:5px;">填写补贴资金信息</button>';
             	}
             }},
-            {data:'apply_date',sWidth:'100px',render:function(){
-            	return '<button class="btn btn-block btn-primary item_details" type="button">建设公示详情</button>'
+            {data:'apply_date',sWidth:'150px',render:function(){
+            	return '<button class="btn btn-block btn-primary item_details" type="button">补贴资金信息详情</button>'
             }}
           ]
       });

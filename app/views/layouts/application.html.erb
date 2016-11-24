@@ -196,39 +196,27 @@
                                           '<li class="divider"></li>'+
                                           '<li><p style="padding-left:20px;">合同管理</p></li>'+
                                           '<li class="divider"></li>'+
-                                          '<li><a href="/fund_contract">相关授权委托书上传</a></li>'+
+                                          '<li><a href="/letter_of_authorization">相关授权委托书上传</a></li>'+
                                           '<li><a href="/fund_contract">签订补贴合同</a></li>'+
                                           '<li><a href="/project_search">成立项目组</a></li>'+
                                           '<li><a href="/construct_contract">施工合同</a></li>'+
-                                          '<li><a href="/project_search">补贴资金兑现公示</a></li>'+
+                                          '<li><a href="/fund_publicity">补贴资金兑现公示</a></li>'+
                                           '<li><a href="/project_search">项目移交</a></li>'+
                                           '<li><a href="/project_search">运行管护</a></li>'
                                           
                                           );
         }else if($("#code").text().length == 6){
-          $(".project_management").append('<li><a href="/project_apply">项目审核</a></li>'+
+          $(".project_management").append('<li class="divider"></li>'+
+                                          '<li><p style="padding-left:20px;">立项审批</p></li>'+
                                           '<li class="divider"></li>'+
-                                          '<li><a href="/project_search">项目查询</a></li>'+
-                                          '<li class="divider"></li>'+
-                                          '<li><a href="/project_search">申请公示</a></li>'+
-                                          '<li class="divider"></li>'+
-                                          '<li><a href="/project_search">计划上报</a></li>'+
-                                          '<li class="divider"></li>'+
-                                          '<li><a href="/project_search">建设公示</a></li>'+
-                                          '<li class="divider"></li>'+
-                                          '<li><a href="/project_search">签订补贴合同</a></li>');
+                                          '<li><a href="/plan_reported">市级上报计划</a></li>'+
+                                          '<li><a href="/city_order">市级计划下达</a></li>');
         }else if($("#code").text().length == 2){
-          $(".project_management").append('<li><a href="/project_apply">项目审核</a></li>'+
+          $(".project_management").append('<li class="divider"></li>'+
+                                          '<li><p style="padding-left:20px;">立项审批</p></li>'+
                                           '<li class="divider"></li>'+
-                                          '<li><a href="/project_search">项目查询</a></li>'+
-                                          '<li class="divider"></li>'+
-                                          '<li><a href="/project_search">申请公示</a></li>'+
-                                          '<li class="divider"></li>'+
-                                          '<li><a href="/project_search">计划上报</a></li>'+
-                                          '<li class="divider"></li>'+
-                                          '<li><a href="/project_search">建设公示</a></li>'+
-                                          '<li class="divider"></li>'+
-                                          '<li><a href="/project_search">签订补贴合同</a></li>');
+                                          '<li><a href="/province_respond">省级计划批复</a></li>'+
+                                          '<li><a href="/province_order">省级计划下达</a></li>');
         }
       })(jQuery)
     </script>

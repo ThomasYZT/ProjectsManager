@@ -18,6 +18,8 @@ Rails.application.routes.draw do
   resources :city_order
   resources :fund_contract
   resources :construct_contract
+  resources :letter_of_authorization
+  resources :fund_publicity
   controller :sessions do
     post 'login' => :create
     delete 'logout' => :destroy

@@ -1,0 +1,2 @@
+class LetterOfAuthorizationController < ApplicationController
+end

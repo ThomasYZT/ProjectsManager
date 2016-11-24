@@ -1,0 +1,2 @@
+class FundPublicityController < ApplicationController
+end
