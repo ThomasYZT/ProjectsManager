@@ -1,0 +1,2 @@
+module AcceptanceStartHelper
+end

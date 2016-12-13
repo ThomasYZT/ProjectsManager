@@ -1,0 +1,2 @@
+class AcceptanceSheetController < ApplicationController
+end

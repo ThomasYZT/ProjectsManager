@@ -93,20 +93,39 @@
                 <li class="dropdown">
                   <a data-toggle="dropdown" class="dropdown-toggle" href="/dynamic_management">过程管理 <span class="caret"></span></a>
                   <ul role="menu" class="dropdown-menu">
-                    <li><a href="/project_search">变更</a></li>
-                    <li><a href="/project_search">签证</a></li>
-                    <li><a href="/project_search">验收</a></li>
-                    <li><a href="/project_search">年度计划变更</a></li>
+                    <li><p style="padding-left: 20px;">变更、签证</p></li>
+                    <li class="divider"></li>
+                    <li><a href="/visa_apply">申请变更或签证</a></li>
+                    <li><a href="/visa_update">上传变更设计或签证单</a></li>
+                    <li><a href="/visa_check">变更、签证审核</a></li>
+                    <li class="divider"></li>
+                    <li><p style="padding-left: 20px;">验收</p></li>
+                    <li class="divider"></li>
+                    <li><a href="/acceptance_apply">申请验收</a></li>
+                    <li><a href="/acceptance_sheet">上报验收档案表</a></li>
+                    <li><a href="/acceptance_start">启动验收</a></li>
+                    <li><a href="/acceptance_scene">现场验收</a></li>
+                    <li><a href="/acceptance_update">上传验收资料</a></li>
                   </ul>
                 </li>
                 <li class="dropdown">
                   <a data-toggle="dropdown" class="dropdown-toggle" href="/dynamic_management">档案管理 <span class="caret"></span></a>
                   <ul role="menu" class="dropdown-menu">
                     <li><a href="#">基础信息</a></li>
-                    <li><a href="#">管理规程</a></li>
+                    <li class="divider"></li>
+                    <li><p style="padding-left: 20px;">资料收集</p></li>
+                    <li class="divider"></li>
+                    <li><a href="#">档案资料</a></li>
+                    <li><a href="#">审计资料</a></li>
+                    <li><a href="#">文档资料</a></li>
+                    <li><a href="#">施工资料</a></li>
+                    <li><a href="#">验收资料</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#">整理归档</a></li>
+                    <!-- <li><a href="#">管理规程</a></li>
                     <li><a href="#">项目管理</a></li>
                     <li><a href="#">档案查询</a></li>
-                    <li><a href="#">统计报表</a></li>
+                    <li><a href="#">统计报表</a></li> -->
                   </ul>
                 </li>
                 <li class="dropdown">
@@ -196,13 +215,15 @@
                                           '<li class="divider"></li>'+
                                           '<li><p style="padding-left:20px;">合同管理</p></li>'+
                                           '<li class="divider"></li>'+
+                                          '<li><a href="/set_team">成立项目组</a></li>'+
                                           '<li><a href="/letter_of_authorization">相关授权委托书上传</a></li>'+
                                           '<li><a href="/fund_contract">签订补贴合同</a></li>'+
-                                          '<li><a href="/project_search">成立项目组</a></li>'+
-                                          '<li><a href="/construct_contract">施工合同</a></li>'+
+                                          '<li><a href="/tender">投标</a></li>'+
+                                          '<li><a href="/construct_contract">签订施工合同</a></li>'+
+                                          '<li><a href="/fund_publicity">过程管理</a></li>'+
                                           '<li><a href="/fund_publicity">补贴资金兑现公示</a></li>'+
-                                          '<li><a href="/project_search">项目移交</a></li>'+
-                                          '<li><a href="/project_search">运行管护</a></li>'
+                                          '<li><a href="/project_transfer">项目移交</a></li>'+
+                                          '<li><a href="/maintenance_protocol">运行管护</a></li>'
                                           
                                           );
         }else if($("#code").text().length == 6){

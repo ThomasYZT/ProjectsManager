@@ -1,0 +1,2 @@
+class VisaCheckController < ApplicationController
+end

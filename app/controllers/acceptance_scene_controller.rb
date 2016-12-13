@@ -1,0 +1,2 @@
+class AcceptanceSceneController < ApplicationController
+end

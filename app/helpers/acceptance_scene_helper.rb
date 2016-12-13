@@ -1,0 +1,2 @@
+module AcceptanceSceneHelper
+end

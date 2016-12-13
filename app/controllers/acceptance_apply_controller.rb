@@ -1,0 +1,2 @@
+class AcceptanceApplyController < ApplicationController
+end

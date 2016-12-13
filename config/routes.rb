@@ -8,9 +8,7 @@ Rails.application.routes.draw do
   resources :dynamic_management
   resources :home_page
   resources :publicity
-  resources :choose_point
   resources :plan_reported
-  resources :design
   resources :county_check
   resources :province_respond
   resources :build_publicity
@@ -20,6 +18,20 @@ Rails.application.routes.draw do
   resources :construct_contract
   resources :letter_of_authorization
   resources :fund_publicity
+
+  resources :acceptance_apply
+  resources :acceptance_scene
+  resources :acceptance_sheet
+  resources :acceptance_start
+  resources :acceptance_update
+  resources :maintenance_protocol
+  resources :project_transfer
+  resources :set_team
+  resources :tender
+  resources :visa_apply
+  resources :visa_check
+  resources :visa_update
+  
   controller :sessions do
     post 'login' => :create
     delete 'logout' => :destroy

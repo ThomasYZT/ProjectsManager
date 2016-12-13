@@ -1,0 +1,2 @@
+class VisaUpdateController < ApplicationController
+end

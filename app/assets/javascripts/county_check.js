@@ -198,31 +198,48 @@
       	console.log(this)
       	//console.log($(this).parent().parent().parent().parent().find("input").length)/*.attr({"disabled":""})*/
       	$.each( $(this).parent().parent().parent().parent().find("input"), function(i, n){
-		  $(n).removeAttr("disabled");
-		  if($(this).parent().parent().parent().parent().find("textarea")){
-		  	$(this).parent().parent().parent().parent().find("textarea").removeAttr("disabled");
-		  }
-		});
-		$(this).replaceWith('<button class="btn btn-success" >提交</button>');
+    		  $(n).removeAttr("disabled");
+    		  if($(this).parent().parent().parent().parent().find("textarea")){
+    		  	$(this).parent().parent().parent().parent().find("textarea").removeAttr("disabled");
+    		  }
+    		});
+  		  $(this).replaceWith('<button class="btn btn-success" >提交</button>');
       })
 
       $(".count").click(function(){
       	$.each( $(".list").find("li"), function(i, n){
-		  $(n).removeClass("active")
-		});
-		$(this).parent().addClass("active");
+    		  $(n).removeClass("active")
+    		});
+    		$(this).parent().addClass("active");
 
-		$.each( $(".box-widget"), function(i, n){
-		  $(n).css({display:"none"})
-		});
-		$.each( $(".list").find("li"), function(i, n){
-		  var index = i;
-		  var boxs = $(".box-widget");
-		  if($(n).hasClass("active")){
-		  	console.log(boxs[i]);
-		  	$(boxs[i]).css({display:""})
-		  }
-		});
+    		$.each( $(".box-widget"), function(i, n){
+    		  $(n).css({display:"none"})
+    		});
+    		$.each( $(".list").find("li"), function(i, n){
+    		  var index = i;
+    		  var boxs = $(".box-widget");
+    		  if($(n).hasClass("active")){
+    		  	console.log(boxs[i]);
+    		  	$(boxs[i]).css({display:""})
+    		  }
+    		});
 
       })
+
+      $(".xls_info").click(function(){
+            $(".suggest").css({display:"none"})
+            $(".doc").css({display:"none"})
+            $(".xls").css({display:""})
+
+      })
+      $(".doc_info").click(function(){
+            $(".suggest").css({display:"none"})
+            $(".doc").css({display:""})
+            $(".xls").css({display:"none"})
+      })
+
+      $(".nopass").click(function(){
+            $("#suggests").modal("toggle");
+      })
+
 })(jQuery)

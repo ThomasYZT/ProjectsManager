@@ -1,0 +1,2 @@
+class ProjectTransferController < ApplicationController
+end

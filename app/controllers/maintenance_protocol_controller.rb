@@ -1,0 +1,2 @@
+class MaintenanceProtocolController < ApplicationController
+end
