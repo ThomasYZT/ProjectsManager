@@ -14,8 +14,136 @@
 
 <% content_for :content do %>
   <section class="content" style="margin-top:-25px;" >
-    
+    <div class="col-md-12">
+      <div class="col-md-2">
+        <div class="box box-solid">
+          <div class="box-header with-border">
+            <h3 class="box-title">村</h3>
+          </div>
+          <div class="box-body no-padding">
+            <ul class="nav nav-pills nav-stacked list">
+              <li class="active"><a href="#" class="count">一号村</a></li>
+              <li><a href="#" class="count 1">二号村</a></li>
+              <li><a href="#" class="count 2">三号村</a></li>
+              <li><a href="#" class="count 3">四号村</a></li>
+              <li><a href="#" class="count 4">五号村</a></li>
+            </ul>
+          </div>
+          <!-- /.box-body -->
+        </div>
+      </div>
+
+      <div class="col-md-10" style="padding-left:0">
+        <div class="box box-widget">
+          
+          <div class="box-body">
+            <button class="btn btn-default edit_publicity">上传运行管护协议</button>
+          </div>
+        </div>
+
+        <div class="box box-widget" style="display: none;">
+          
+          <div class="box-body">
+            <button class="btn btn-default edit_publicity">上传运行管护协议</button>
+          </div>
+        </div>
+
+        <div class="box box-widget" style="display: none;">
+          
+          <div class="box-body">
+            <button class="btn btn-default edit_publicity">上传运行管护协议</button>
+          </div>
+        </div>
+
+        <div class="box box-widget" style="display: none;">
+          
+          <div class="box-body">
+            <button class="btn btn-default edit_publicity">上传运行管护协议</button>
+          </div>
+        </div>
+
+        <div class="box box-widget" style="display: none;">
+          
+          <div class="box-body">
+            <button class="btn btn-default edit_publicity">上传运行管护协议</button>
+          </div>
+        </div>
+      </div>
+    </div>
   </section>
-  
+
+  <div id="edit_publicity" class="modal fade in">
+    <div class="modal-dialog">
+      <div class="box box-primary box-solid">
+          <div class="box-header ui-sortable-handle" style="cursor: move;">
+            <i class="ion ion-clipboard"></i>
+
+            <h3 class="box-title">申请公示材料信息</h3>
+          </div>
+          <!-- /.box-header -->
+          <div class="box-body">
+            <div class="col-md-6" style="padding:5px 5px;border:1px dashed #3c8dbc;border-radius:5px;">
+              <div class="col-md-12" style="padding:0 0;">
+                <label for="exampleInputEmail1">市名称</label>
+                <input type="email" placeholder="填写市名称" style="border-radius:5px;" id="exampleInputEmail1" class="form-control">
+                <label for="exampleInputEmail1">县名称</label>
+                <input type="email" placeholder="填写县名称" style="border-radius:5px;" id="exampleInputEmail1" class="form-control">
+                <label for="exampleInputEmail1">乡(镇)名称</label>
+                <input type="email" placeholder="填写乡(镇)名称" style="border-radius:5px;" id="exampleInputEmail1" class="form-control">
+                <label for="exampleInputEmail1">村名称</label>
+                <input type="email" placeholder="填写村名称" style="border-radius:5px;" id="exampleInputEmail1" class="form-control">
+                <label for="exampleInputEmail1">合同编号</label>
+                <input type="email" placeholder="填写合同编号" style="border-radius:5px;" id="exampleInputEmail1" class="form-control">
+                <label for="exampleInputEmail1">项目编号</label>
+                <input type="email" placeholder="填写项目编号" style="border-radius:5px;" id="exampleInputEmail1" class="form-control">
+                <label for="exampleInputEmail1">年份</label>
+                <input type="email" placeholder="请填写年份" style="border-radius:5px;" id="exampleInputEmail1" class="form-control">
+                <label for="exampleInputEmail1">月份</label>
+                <input type="email" placeholder="请填写月份" style="border-radius:5px;" id="exampleInputEmail1" class="form-control">
+                <label for="exampleInputEmail1">日期</label>
+                <input type="email" placeholder="请填写日期" style="border-radius:5px;" id="exampleInputEmail1" class="form-control">
+                
+              </div>
+            </div>
+            <div class="col-md-6" style="padding:5px 5px;border:1px dashed #3c8dbc;border-radius:5px;">
+              <div class="col-md-12" style="padding:0 0;">
+                <label for="exampleInputEmail1">水窖项目编号</label>
+                <input type="email" placeholder="填写编号" style="border-radius:5px;" id="exampleInputEmail1" class="form-control">
+                <label for="exampleInputEmail1">水池项目编号</label>
+                <input type="email" placeholder="填写编号" style="border-radius:5px;" id="exampleInputEmail1" class="form-control">
+                <label for="exampleInputEmail1">管网项目编号</label>
+                <input type="email" placeholder="填写编号" style="border-radius:5px;" id="exampleInputEmail1" class="form-control">
+                <label for="exampleInputEmail1">沟渠项目编号</label>
+                <input type="email" placeholder="填写编号" style="border-radius:5px;" id="exampleInputEmail1" class="form-control">
+                <label for="exampleInputEmail1">塘垻项目编号</label>
+                <input type="email" placeholder="填写编号" style="border-radius:5px;" id="exampleInputEmail1" class="form-control">
+                <label for="exampleInputEmail1">堤灌站项目编号</label>
+                <input type="email" placeholder="填写编号" style="border-radius:5px;" id="exampleInputEmail1" class="form-control">
+                <label for="exampleInputEmail1">机耕路项目编号</label>
+                <input type="email" placeholder="填写编号" style="border-radius:5px;" id="exampleInputEmail1" class="form-control">
+                <label for="exampleInputEmail1">密集型烤房群项目编号</label>
+                <input type="email" placeholder="填写编号" style="border-radius:5px;" id="exampleInputEmail1" class="form-control">
+                <label for="exampleInputEmail1">烟叶烘烤工厂项目编号</label>
+                <input type="email" placeholder="填写编号" style="border-radius:5px;" id="exampleInputEmail1" class="form-control">
+                <label for="exampleInputEmail1">烟叶育苗工厂项目编号</label>
+                <input type="email" placeholder="填写编号" style="border-radius:5px;" id="exampleInputEmail1" class="form-control">
+                
+              </div>
+            </div>
+          </div>
+          <!-- /.box-body -->
+          <div class="box-footer clearfix no-border">
+            <button class="btn btn-primary pull-right" style="margin-left:20px;" type="button">生成公示文档</button>
+            <button class="btn btn-success pull-right" type="button">提交</button>
+          </div>
+        </div>
+      <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+  </div>
+
   
 <% end %>
+
+
+
