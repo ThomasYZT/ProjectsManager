@@ -7,7 +7,7 @@
             $(".xls").css({display:""})
 
       })
-	$(".doc_info").click(function(){
+	   　$(".doc_info").click(function(){
             $(".suggest").css({display:"none"})
             $(".doc").css({display:""})
             $(".xls").css({display:"none"})
@@ -59,4 +59,24 @@
            $(".submit").css({display:""});
            $(".save").css({display:"none"});
        });
+
+      $(".count").click(function(){
+        $.each( $(".list").find("li"), function(i, n){
+          $(n).removeClass("active")
+        });
+        $(this).parent().addClass("active");
+
+        $.each( $(".BOX"), function(i, n){
+          $(n).css({display:"none"})
+        });
+        $.each( $(".list").find("li"), function(i, n){
+          var index = i;
+          var boxs = $(".BOX");
+          if($(n).hasClass("active")){
+            console.log(boxs[i]);
+            $(boxs[i]).css({display:""})
+          }
+        });
+
+      })
 })(jQuery)

@@ -31,6 +31,10 @@ Rails.application.routes.draw do
   resources :visa_apply
   resources :visa_check
   resources :visa_update
+  resources :class_apply
+  resources :city_plan_collect
+  resources :county_plan_collect
+  resources :plan
   
   controller :sessions do
     post 'login' => :create

@@ -78,7 +78,8 @@
           columns:[
             {data:'item_code'},
             {data:'item_type'},
-            {data:'apply_date'}
+            {data:'apply_date'},
+            {data:'subsidy'}
             /*{data:'choose_point',sWidth:'350px',render:function(data,type,row,meta){
             	if(row.choose_point == false){
             		return '<button class="btn edit_choose_point" style="color:#3c8dbc;border:1px solid #3c8dbc;padding:5px 5px;border-radius:5px;">填写选点报告书</button><i class="fa fa-fw fa-exclamation-circle" style="color:#f39c12;"></i>'+
@@ -115,7 +116,8 @@
           columns:[
             {data:'item_code'},
             {data:'item_type'},
-            {data:'apply_date'}
+            {data:'apply_date'},
+            {data:'subsidy'}
           ]
       });
 
@@ -135,7 +137,8 @@
           columns:[
             {data:'item_code'},
             {data:'item_type'},
-            {data:'apply_date'}
+            {data:'apply_date'},
+            {data:'subsidy'}
           ]
       });
 
@@ -155,7 +158,8 @@
           columns:[
             {data:'item_code'},
             {data:'item_type'},
-            {data:'apply_date'}
+            {data:'apply_date'},
+            {data:'subsidy'}
           ]
       });
 
@@ -175,7 +179,8 @@
           columns:[
             {data:'item_code'},
             {data:'item_type'},
-            {data:'apply_date'}
+            {data:'apply_date'},
+            {data:'subsidy'}
           ]
       });
       

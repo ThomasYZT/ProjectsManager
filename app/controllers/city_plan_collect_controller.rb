@@ -1,0 +1,2 @@
+class CityPlanCollectController < ApplicationController
+end

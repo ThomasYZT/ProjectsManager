@@ -4,55 +4,64 @@
   		contract_code:"00001",
   		first_part:"永州市烟草局",
   		second_part:"二号村小组",
-  		date:"2016-11-22"
+  		date:"2016-11-22",
+      money:10000
   	},
   	{
   		contract_code:"00002",
   		first_part:"永州市烟草局",
   		second_part:"四号村小组",
-  		date:"2016-11-22"
+  		date:"2016-11-22",
+      money:10000
   	},
   	{
   		contract_code:"00003",
   		first_part:"永州市烟草局",
   		second_part:"六号村小组",
-  		date:"2016-11-22"
+  		date:"2016-11-22",
+      money:10000
   	},
   	{
   		contract_code:"00004",
   		first_part:"永州市烟草局",
   		second_part:"八号村小组",
-  		date:"2016-11-22"
+  		date:"2016-11-22",
+      money:10000
   	},
   	{
   		contract_code:"00005",
   		first_part:"永州市烟草局",
   		second_part:"十号村小组",
-  		date:"2016-11-22"
+  		date:"2016-11-22",
+      money:10000
   	},
   	{
   		contract_code:"00006",
   		first_part:"永州市烟草局",
   		second_part:"十二号村小组",
-  		date:"2016-11-22"
+  		date:"2016-11-22",
+      money:10000
   	},
   	{
   		contract_code:"00007",
   		first_part:"永州市烟草局",
   		second_part:"十四号村小组",
-  		date:"2016-11-22"
+  		date:"2016-11-22",
+      money:10000
   	},
   	{
   		contract_code:"00008",
   		first_part:"永州市烟草局",
   		second_part:"十六号村小组",
-  		date:"2016-11-22"
+  		date:"2016-11-22",
+      money:10000
   	},
   	{
   		contract_code:"00009",
   		first_part:"永州市烟草局",
   		second_part:"十八号村小组",
-  		date:"2016-11-22"
+  		date:"2016-11-22",
+      money:10000
   	}
   ];
 
@@ -73,6 +82,7 @@
             {data:'contract_code'},
             {data:'first_part'},
             {data:'second_part'},
+            {data:'money'},
             {data:'date'}
           ]
       });

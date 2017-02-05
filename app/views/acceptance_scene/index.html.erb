@@ -1,21 +1,58 @@
 <% content_for :header do %>
   <p id="code" style="display:none"><%= session[:company_id]%></p>
-  <section class="content-header">
-    <div class="row">
-      <div class="col-xs-12">
-        <ol class="breadcrumb" style="font-size:medium;">
-          <li><a href="/dashboard"><i class="fa fa-dashboard"></i> 首页 </a></li>
-          <li class="active">现场验收</li>
-        </ol>
-      </div>
-    </div>
-  </section>
+  <section class="content-header"> 
+    <div class="row"> 
+      <div class="col-xs-12"> 
+        <ol class="breadcrumb" style="font-size:medium;"> 
+          <li><a href="/dashboard"><i class="fa fa-dashboard"></i> 首页 </a></li> 
+          <li class="active">验收资料</li> 
+        </ol> 
+      </div> 
+    </div> 
+  </section> 
 <% end %>
 
 <% content_for :content do %>
   <section class="content" style="margin-top:-25px;" >
-    
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+        <div style="margin-top:50px;height:300px;" class="box">
+          <div style="width:50%;margin:120px auto;">
+            <div style="width: 150px;" class="btn btn-primary btn-file">上传验收报告<input type="file"></div>
+            <div style="width: 160px;margin-left: 10px;" class="btn btn-primary btn-file">上传项目工程清单<input type="file"></div>
+          </div>
+        </div>
+      </div>
+    </div>
   </section>
-  
+  <section class="content content2">
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+        <div style="margin-top:50px;height:300px;" class="box">
+          <div style="width:50%;margin:100px auto;">
+            <div style="width: 150px;" class="btn btn-primary btn-file">上传整改意见<input type="file"></div>
+            <div style="width: 150px;margin-left: 10px;" class="btn btn-primary btn-file">上传计划核对表<input type="file"></div>
+            <div style="width: 150px;margin-top: 20px" class="btn btn-primary btn-file">上传档案打分表<input type="file"></div>
+            <div style="width: 150px;margin:20px 0 0 10px;" class="btn btn-primary btn-file">上传验收报告<input type="file"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+  <section class="content content3">
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+        <div style="margin-top:50px;height:300px;" class="box">
+          <div style="width:50%;margin:100px auto;">
+            <div style="width: 150px;" class="btn btn-primary btn-file">上传整改意见<input type="file"></div>
+            <div style="width: 150px;margin-left: 10px;" class="btn btn-primary btn-file">上传计划核对表<input type="file"></div>
+            <div style="width: 150px;margin-top: 20px" class="btn btn-primary btn-file">上传档案打分表<input type="file"></div>
+            <div style="width: 150px;margin:20px 0 0 10px;" class="btn btn-primary btn-file">上传验收报告<input type="file"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
   
 <% end %>

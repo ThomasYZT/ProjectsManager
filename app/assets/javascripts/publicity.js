@@ -6,8 +6,7 @@
 			total_cost:129381,
 			subsidy:62412,
 			apply_date:"2016-10-25",
-			input_status:true,
-			status:"县级审核中"
+			input_status:true
 		},
 		{
 			item_code:"000002",
@@ -15,8 +14,7 @@
 			total_cost:129381,
 			subsidy:91231,
 			apply_date:"2016-10-25",
-			input_status:false,
-			status:"县级审核中"
+			input_status:false
 		},
 		{
 			item_code:"000003",
@@ -24,8 +22,7 @@
 			total_cost:874524,
 			subsidy:701237,
 			apply_date:"2016-10-25",
-			input_status:false,
-			status:"县级审核不通过"
+			input_status:false
 		},
 		{
 			item_code:"000004",
@@ -33,8 +30,7 @@
 			total_cost:35234,
 			subsidy:35234,
 			apply_date:"2016-10-25",
-			input_status:false,
-			status:"县级审核通过"
+			input_status:false
 		},
 		{
 			item_code:"000005",
@@ -42,8 +38,7 @@
 			total_cost:745734,
 			subsidy:745734,
 			apply_date:"2016-10-25",
-			input_status:false,
-			status:"县级审核中"
+			input_status:false
 		},
 		{
 			item_code:"000006",
@@ -51,8 +46,7 @@
 			total_cost:104742,
 			subsidy:104742,
 			apply_date:"2016-10-25",
-			input_status:false,
-			status:"县级审核不通过"
+			input_status:false
 		}
 	];
 
@@ -75,7 +69,6 @@
             {data:'total_cost'},
             {data:'subsidy'},
             {data:'apply_date'},
-            {data:'status'},
             {data:'status',render:function(){
             	return '<div class="btn btn-default btn-file"><i class="fa fa-paperclip"></i>上传照片<input type="file" name="attachment"></div>'
             }},
@@ -114,7 +107,6 @@
             {data:'total_cost'},
             {data:'subsidy'},
             {data:'apply_date'},
-            {data:'status'},
             {data:'status',render:function(){
             	return '<div class="btn btn-default btn-file"><i class="fa fa-paperclip"></i>上传照片<input type="file" name="attachment"></div>'
             }},
@@ -150,7 +142,6 @@
             {data:'total_cost'},
             {data:'subsidy'},
             {data:'apply_date'},
-            {data:'status'},
             {data:'status',render:function(){
             	return '<div class="btn btn-default btn-file"><i class="fa fa-paperclip"></i>上传照片<input type="file" name="attachment"></div>'
             }},
@@ -186,7 +177,6 @@
             {data:'total_cost'},
             {data:'subsidy'},
             {data:'apply_date'},
-            {data:'status'},
             {data:'status',render:function(){
             	return '<div class="btn btn-default btn-file"><i class="fa fa-paperclip"></i>上传照片<input type="file" name="attachment"></div>'
             }},
@@ -222,7 +212,6 @@
             {data:'total_cost'},
             {data:'subsidy'},
             {data:'apply_date'},
-            {data:'status'},
             {data:'status',render:function(){
             	return '<div class="btn btn-default btn-file"><i class="fa fa-paperclip"></i>上传照片<input type="file" name="attachment"></div>'
             }},
@@ -266,4 +255,34 @@
     		});
 
       })
+
+      /*$("#tTrolleys").find("tbody").dblclick(function(){
+        var tds=$(this).find("td");
+        $.each(tds, function(i,val){
+          var jqob=$(val);
+          if(i < 1 || jqob.has('button').length ){return true;}//跳过第1项 序号,按钮
+          var txt=jqob.text();
+          var put=$("<input style='width:100px' type='text'>");
+          put.val(txt);
+          jqob.html(put);
+        });
+        $(".submit").css({display:"none"});
+        $(".save").css({display:""});
+      });*/
+
+      $("tbody").find("tr").find("td:first").dblclick(function(){
+        
+        var td = $(this);
+        var txt = td.text();
+        var put = $("<input style='width:100px' type='text' /><button class='save'>保存</button>");
+        put.val(txt);
+        td.html(put);
+
+        $(".save").click(function(){
+          var td = $(this).parent();
+          var txt =  td.children('input').val();
+          td.html(txt);
+        })
+      })
+      
 })(jQuery)

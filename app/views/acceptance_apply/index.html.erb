@@ -1,21 +1,292 @@
 <% content_for :header do %>
   <p id="code" style="display:none"><%= session[:company_id]%></p>
-  <section class="content-header">
-    <div class="row">
-      <div class="col-xs-12">
-        <ol class="breadcrumb" style="font-size:medium;">
-          <li><a href="/dashboard"><i class="fa fa-dashboard"></i> 首页 </a></li>
-          <li class="active">申请验收</li>
-        </ol>
-      </div>
-    </div>
-  </section>
+  <section class="content-header"> 
+   <div class="row"> 
+    <div class="col-xs-12"> 
+     <ol class="breadcrumb" style="font-size:medium;"> 
+      <li><a href="/dashboard"><i class="fa fa-dashboard"></i> 首页 </a></li> 
+      <li class="active">申请验收</li> 
+     </ol> 
+    </div> 
+   </div> 
+  </section> 
 <% end %>
 
 <% content_for :content do %>
-  <section class="content" style="margin-top:-25px;" >
-    
+    <section class="content content1" style="margin-top:-25px;"> 
+     <div class="row" style="margin-bottom: 20px;"> 
+      <div class="col-md-8 col-md-offset-2"> 
+       <div class="register span6"> 
+        <form action="" method="post"> 
+         <h2>烟基项目<span style="color: #3c8dbc;"><strong>验收申请</strong></span></h2> 
+         <label for="firstname">项目名称</label> 
+         <div class="col-md-12" style="margin-bottom: 10px;"> 
+          <select class="form-control select2 select2-hidden-accessible item_type" tabindex="-1" aria-hidden="true"> <option value="1" 　selected="selected">烟水烟路</option> <option value="2">烤房</option> <option value="3">育苗设施建设</option> <option value="4">烟用机械</option> <option value="5">土地整理</option> <option value="6">烤房设备更换</option> </select>
+          <span class="select2 select2-container select2-container--default" dir="ltr" style="width: 731px;width: 99%;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-autocomplete="list" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-labelledby="select2-rz6d-container"><span class="select2-selection__rendered" id="select2-rz6d-container" title="烟水烟路"><span class="select2-selection__clear">&times;</span>烟水烟路</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span> 
+         </div> 
+         <br /> 
+         <br /> 
+         <div id="ysyl"> 
+          <label for="lastname">县名称</label> 
+          <input type="text" id="lastname" name="lastname" placeholder="请填写县名称" /> 
+          <label for="lastname">镇名称</label> 
+          <input type="text" id="lastname" name="lastname" placeholder="请填写县名称" /> 
+          <label for="lastname">村（或合作社）名称</label> 
+          <input type="text" id="lastname" name="lastname" placeholder="请填写县名称" />
+          <label for="lastname">验收意见</label>
+          <textarea id="lastname" name="lastname" placeholder="请填写验收意见"
+                style="border:none;
+                resize:none;
+                  width: 95%;
+            height: 100px;
+            padding: 5px 5px;
+            background: #fcfcfc;
+            border: 1px solid #ddd;
+            -moz-border-radius: 2px;
+            -webkit-border-radius: 2px;
+            border-radius: 10px;
+            -moz-box-shadow: 0 1px 3px 0 rgba(0,0,0,.1) inset;
+            -webkit-box-shadow: 0 1px 3px 0 rgba(0,0,0,.1) inset;
+            box-shadow: 0 1px 3px 0 rgba(0,0,0,.1) inset;
+            font-family: 'PT Sans', Helvetica, Arial, sans-serif;
+            color: #888;
+            font-size: 16px;"></textarea>
+         </div> 
+         <button class="save-button" type="submit">生成项目验收申请文档</button> 
+         <div style="width: 464px;margin-top: 20px" class="btn btn-primary btn-file">
+          　上传申请书
+           <input type="file">
+         </div>
+         <button class="submit-button" type="submit">提交</button> 
+        </form> 
+       </div> 
+      </div> 
+     </div> 
   </section>
+
+  <section class="content content2" style="display: none">
+    <div class="col-md-12">
+      <div class="col-md-2">
+        <div class="box box-solid">
+          <div class="box-header with-border">
+            <h3 class="box-title">村</h3>
+          </div>
+          <div class="box-body no-padding">
+            <ul class="nav nav-pills nav-stacked list">
+              <li class="active"><a href="#" class="count">宁远县</a></li>
+              <li><a href="#" class="count 1">江华县</a></li>
+              <li><a href="#" class="count 2">永江县</a></li>
+              <li><a href="#" class="count 3">道县</a></li>
+              <li><a href="#" class="count 4">蓝山县</a></li>
+              <li><a href="#" class="count 5">新田县</a></li>
+            </ul>
+          </div>
+          <!-- /.box-body -->
+        </div>
+      </div>
+
+      <div class="col-md-10" style="padding-left:0">
+        <div class="box box-widget BOX">
+          <div class="box-title">
+            <div style="margin: 0 auto;width: 200px;"><h4 style="margin:0 0;padding-top:30px;width: 200px;text-align: center">宁远县验收申请</h4></div>
+          </div>
+          <div class="box-body">
+            <div class="box box-widget xls">
+              <div class="box-body">
+                ...asdasd
+              </div>
+              
+            </div>
+            
+          </div>
+        </div>
+        <div class="box box-widget BOX" style="display: none">
+          <div class="box-title">
+            <div style="margin: 0 auto;width: 200px;"><h4 style="margin:0 0;padding-top:30px;width: 200px;text-align: center">永江县验收申请</h4></div>
+          </div>
+          <div class="box-body">
+            <div class="box box-widget xls">
+              <div class="box-body">
+                ...
+              </div>
+              
+            </div>
+            
+          </div>
+        </div>
+        <div class="box box-widget BOX" style="display: none">
+          <div class="box-title">
+            <div style="margin: 0 auto;width: 200px;"><h4 style="margin:0 0;padding-top:30px;width: 200px;text-align: center">道县验收申请</h4></div>
+          </div>
+          <div class="box-body">
+            <div class="box box-widget xls">
+              <div class="box-body">
+                ...
+              </div>
+              
+            </div>
+            
+          </div>
+        </div>
+        <div class="box box-widget BOX" style="display: none">
+          <div class="box-title">
+            <div style="margin: 0 auto;width: 200px;"><h4 style="margin:0 0;padding-top:30px;width: 200px;text-align: center">蓝山县验收申请</h4></div>
+          </div>
+          <div class="box-body">
+            <div class="box box-widget xls">
+              <div class="box-body">
+                ...
+              </div>
+              
+            </div>
+            
+          </div>
+        </div>
+        <div class="box box-widget BOX" style="display: none">
+          <div class="box-title">
+            <div style="margin: 0 auto;width: 200px;"><h4 style="margin:0 0;padding-top:30px;width: 200px;text-align: center">新田县验收申请</h4></div>
+          </div>
+          <div class="box-body">
+            <div class="box box-widget xls">
+              <div class="box-body">
+                ...
+              </div>
+              
+            </div>
+            
+          </div>
+        </div>
+        <div class="box box-widget BOX" style="display: none">
+          <div class="box-title">
+            <div style="margin: 0 auto;width: 200px;"><h4 style="margin:0 0;padding-top:30px;width: 200px;text-align: center">江华县验收申请</h4></div>
+          </div>
+          <div class="box-body">
+            <div class="box box-widget xls">
+              <div class="box-body">
+                ...
+              </div>
+              
+            </div>
+            
+          </div>
+        </div>
+
+        
+      </div>
+    </div>
+  </section> 
+
+  <section class="content content3" style="display: none">
+    <div class="col-md-12">
+      <div class="col-md-2">
+        <div class="box box-solid">
+          <div class="box-header with-border">
+            <h3 class="box-title">村</h3>
+          </div>
+          <div class="box-body no-padding">
+            <ul class="nav nav-pills nav-stacked list">
+              <li class="active"><a href="#" class="count">长沙市</a></li>
+              <li><a href="#" class="count 1">郴州市</a></li>
+              <li><a href="#" class="count 2">永州市</a></li>
+              <li><a href="#" class="count 3">衡阳市</a></li>
+              <li><a href="#" class="count 4">常德市</a></li>
+              <li><a href="#" class="count 5">邵阳市</a></li>
+            </ul>
+          </div>
+          <!-- /.box-body -->
+        </div>
+      </div>
+
+      <div class="col-md-10" style="padding-left:0">
+        <div class="box box-widget BOX">
+          <div class="box-title">
+            <div style="margin: 0 auto;width: 200px;"><h4 style="margin:0 0;padding-top:30px;width: 200px;text-align: center">长沙市验收申请</h4></div>
+          </div>
+          <div class="box-body">
+            <div class="box box-widget xls">
+              <div class="box-body">
+                ...asdasd
+              </div>
+              
+            </div>
+            
+          </div>
+        </div>
+        <div class="box box-widget BOX" style="display: none">
+          <div class="box-title">
+            <div style="margin: 0 auto;width: 200px;"><h4 style="margin:0 0;padding-top:30px;width: 200px;text-align: center">郴州市验收申请</h4></div>
+          </div>
+          <div class="box-body">
+            <div class="box box-widget xls">
+              <div class="box-body">
+                ...
+              </div>
+              
+            </div>
+            
+          </div>
+        </div>
+        <div class="box box-widget BOX" style="display: none">
+          <div class="box-title">
+            <div style="margin: 0 auto;width: 200px;"><h4 style="margin:0 0;padding-top:30px;width: 200px;text-align: center">永州市验收申请</h4></div>
+          </div>
+          <div class="box-body">
+            <div class="box box-widget xls">
+              <div class="box-body">
+                ...
+              </div>
+              
+            </div>
+            
+          </div>
+        </div>
+        <div class="box box-widget BOX" style="display: none">
+          <div class="box-title">
+            <div style="margin: 0 auto;width: 200px;"><h4 style="margin:0 0;padding-top:30px;width: 200px;text-align: center">衡阳市验收申请</h4></div>
+          </div>
+          <div class="box-body">
+            <div class="box box-widget xls">
+              <div class="box-body">
+                ...
+              </div>
+              
+            </div>
+            
+          </div>
+        </div>
+        <div class="box box-widget BOX" style="display: none">
+          <div class="box-title">
+            <div style="margin: 0 auto;width: 200px;"><h4 style="margin:0 0;padding-top:30px;width: 200px;text-align: center">常德市验收申请</h4></div>
+          </div>
+          <div class="box-body">
+            <div class="box box-widget xls">
+              <div class="box-body">
+                ...
+              </div>
+              
+            </div>
+            
+          </div>
+        </div>
+        <div class="box box-widget BOX" style="display: none">
+          <div class="box-title">
+            <div style="margin: 0 auto;width: 200px;"><h4 style="margin:0 0;padding-top:30px;width: 200px;text-align: center">邵阳市验收申请</h4></div>
+          </div>
+          <div class="box-body">
+            <div class="box box-widget xls">
+              <div class="box-body">
+                ...
+              </div>
+              
+            </div>
+            
+          </div>
+        </div>
+
+        
+      </div>
+    </div>
+  </section> 
   
   
 <% end %>
